@@ -1,0 +1,44 @@
+/*
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap/scss/bootstrap";
+
+// 共通レイアウト
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体",
+    "ヒラギノ角ゴ Pro W3", sans-serif;
+}
+
+//TOP
+.wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+.top-header {
+  display: flex;
+  justify-content: end;
+}
+
+.main-nav {
+  display: flex;
+  list-style: none;
+  text-transform: uppercase;
+  margin-top: 34px;
+
+  & li {
+    margin-left: 36px;
+
+    &:hover {
+      color: #0bd;
+    }
+  }
+}

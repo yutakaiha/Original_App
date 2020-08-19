@@ -1,2 +1,17 @@
-<h1>Top#index</h1>
-<p>Find me in app/views/top/index.html.erb</p>
+<div id= "home" class="big-bg">
+  <div class="top-header wrapper">
+    <nav>
+      <ul class="main-nav">
+        <li><%= link_to '新着情報一覧', "#"  %></li>
+        <li><%= link_to '助成金等検索', "#"  %></li>
+        <li><%= link_to 'ライフイベントから検索', "#" %></li>
+        <li><%= link_to 'カテゴリ別検索', "#" %></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="home-content wrapper">
+    <h1>Help Your Life </h1>
+    <%= link_to '新規登録はこちら', "#", class: "sign-up" %>
+  </div>
+</div>
