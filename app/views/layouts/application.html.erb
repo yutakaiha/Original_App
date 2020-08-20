@@ -14,6 +14,14 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header class="header-container">
+      <%= render 'layouts/header' %>
+    </header>
+    <div class="base-container">
+      <%= yield %>
+    </div>
+    <footer class="footer-container">
+
+    </footer>
   </body>
 </html>
