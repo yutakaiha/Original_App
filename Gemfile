@@ -25,6 +25,8 @@ gem 'sprockets', '~>3.7.2'
 gem 'faker'
 gem 'rails-i18n'
 gem 'pry-rails'
+gem "kaminari"
+gem "bootstrap4-kaminari-views"
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
