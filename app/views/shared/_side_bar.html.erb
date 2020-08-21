@@ -1,0 +1,17 @@
+<table class="table table-striped">
+  <thead class="table-ligth">
+    <tr>
+      <th scope="col">最新情報</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% informations = select_info %>
+    <% informations.each do |information| %>
+      <tr>
+        <td>
+          <%= link_to_unless_current information.title, information%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

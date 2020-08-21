@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'top/index'
-  root to: "top#index"
+  root to: "informations#index"
+  resources :informations, only: [:index, :show]
+
+  
   
 end
