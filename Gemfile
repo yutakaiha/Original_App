@@ -27,6 +27,7 @@ gem 'rails-i18n'
 gem 'pry-rails'
 gem "kaminari"
 gem "bootstrap4-kaminari-views"
+gem 'impressionist'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
