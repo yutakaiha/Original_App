@@ -15,3 +15,29 @@
     <% end %>
   </tbody>
 </table>
+<br>
+<div class="table-title">閲覧上位ランキングTOP5</div>
+<table class="table table-striped">
+  <thead class="table-ligth">
+    <tr>
+      <th scope="col">順位</th>
+      <th>タイトル</th>
+      <th>PV数</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% most_viewd.each.with_index(1) do |view, i| %>
+      <tr>
+        <td>
+          <%= i %>
+        </td>
+        <td>
+          <%= link_to_unless_current view.title, view%>
+        </td>
+        <td>
+          <span><i class="far fa-eye"></i></span> <%= view.impressions_count %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
