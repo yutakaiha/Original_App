@@ -114,6 +114,7 @@ section {
 
     & .pagination {
       margin-top: 15px;
+
       & p {
         margin: 0 auto;
       }
@@ -146,6 +147,12 @@ section {
     border-bottom: 3px solid $Main;
   }
 }
+
 .content {
   border: 1px solid $Main;
+}
+
+// side_bar.html.erb
+.table-title {
+  font-size: 1.3rem;
 }

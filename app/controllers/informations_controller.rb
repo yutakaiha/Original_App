@@ -1,5 +1,4 @@
 class InformationsController < ApplicationController
-  impressionist actions: :show
   
   def index  
     @informations = Information.order(created_at: :desc).page(params[:page]).per(5)
