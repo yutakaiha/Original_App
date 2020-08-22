@@ -1,2 +1,13 @@
-<h1>Subsidies#show</h1>
-<p>Find me in app/views/subsidies/show.html.erb</p>
+<div class="container">
+  <h1><%= @subsidy.title %></h1>
+  <div class="row my-4">
+    <div class="content col-md-7 px-3">
+      <%= simple_format @subsidy.content %>
+    </div>
+    <div class="side_bar col-md-5 px-3">
+
+    </div>
+  </div>
+</div>
+
+
