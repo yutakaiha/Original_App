@@ -42,7 +42,8 @@ EOS
     title: titles[i % 16],
     content: content,
     start_date: 150.days.ago.advance(days: rand(50)),
-    end_date: i.odd? ? 50.days.ago.advance(days: rand(48)) : nil
+    end_date: i.odd? ? 50.days.ago.advance(days: rand(48)) : nil,
+    limit_amount: rand(2).odd? ? rand(20) : nil
   )
 end
 
