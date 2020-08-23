@@ -1,4 +1,5 @@
 class Subsidy < ApplicationRecord
+  belongs_to :category
   with_options presence: true do
     validates :title
     validates :content
