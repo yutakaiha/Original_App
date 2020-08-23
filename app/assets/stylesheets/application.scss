@@ -156,3 +156,20 @@ section {
 .table-title {
   font-size: 1.3rem;
 }
+
+//categories/index.html.erb
+.categories-wrapper {
+  margin-top: 40px;
+  text-align: center;
+
+  & .card-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    & .card-style {
+      margin-left: 10px;
+      margin-bottom: 35px;
+    }
+  }
+}
