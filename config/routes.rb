@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   root to: "informations#index"
   resources :informations, only: [:index, :show]
   resources :subsidies
-  resources :categories, only: :index
+  resources :categories, only: [:index, :show]
 
 end
