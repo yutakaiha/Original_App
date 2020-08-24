@@ -13,9 +13,14 @@
           ライフイベントから検索
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">出産</a>
-          <a class="dropdown-item" href="#">子育て</a>
-          <a class="dropdown-item" href="#">結婚</a>
+          <%= link_to '妊娠・出産',  event_path(id: 1), class: "dropdown-item" %>
+          <%= link_to '子育て・保育',  event_path(id: 2), class: "dropdown-item" %>
+          <%= link_to '学校教育',  event_path(id: 3), class: "dropdown-item" %>
+          <%= link_to '結婚・離婚',  event_path(id: 4), class: "dropdown-item" %>
+          <%= link_to '引越し・暮らし',  event_path(id: 5), class: "dropdown-item" %>
+          <%= link_to '就職・退職',  event_path(id: 6), class: "dropdown-item" %>
+          <%= link_to '高齢者・介護',  event_path(id: 7), class: "dropdown-item" %>
+          <%= link_to 'おくやみ',  event_path(id: 8), class: "dropdown-item" %>
         </div>
       </li>
       <li class="nav-item">
