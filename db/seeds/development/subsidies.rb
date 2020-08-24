@@ -38,15 +38,17 @@ content = <<-"EOS"
 EOS
 
 CATEGORYID = [1, 2, 3, 4, 5 ,6]
+LIFEEVENTS = (1..8).to_a
 
-0.upto(49) do |i|
+0.upto(99) do |i|
   Subsidy.create!(
     title: titles[i % 16],
     content: content,
     start_date: 150.days.ago.advance(days: rand(50)),
     end_date: i.odd? ? 50.days.ago.advance(days: rand(48)) : nil,
     limit_amount: rand(2).odd? ? rand(20) : nil,
-    category_id: CATEGORYID[i % 6]
+    category_id: CATEGORYID[i % 6],
+    event_id: LIFEEVENTS[i % 8]
   )
 end
 
