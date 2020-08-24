@@ -5,12 +5,16 @@ CATEGORIES = %w[くらしと手続き（税金・国保・年金・ごみ・環�
                 産業・観光（地域活性化事業、食べる・買う、農林水産等）
                 都市計画（景観、建築、道路、住まい、土地利用等）]
 
+PICTURES = %w[nenkin.png ikuji.png fukushi.png sports.jpg kannkou.jpg matinami.jpg]
+
 puts 'Create categories...'
 
-list = []
-CATEGORIES.each do |category|
-  list << {title: category}
+0.upto(5) do |i|
+  Category.create!(
+    title: CATEGORIES[i],
+    picture: PICTURES[i]
+  )
 end
-Category.create!(list)
+
 puts "データ投入完了"
 puts "categories = #{Category.count}"
