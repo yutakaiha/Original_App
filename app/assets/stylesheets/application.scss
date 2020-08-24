@@ -141,6 +141,10 @@ section {
 .container {
   margin-top: 40px;
 
+  & .search-container {
+    margin-top: 17px;
+  }
+
   & h1 {
     font-size: 2rem;
     margin-bottom: 10px;

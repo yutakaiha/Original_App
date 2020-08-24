@@ -2,6 +2,12 @@
 <div class="container">
   <% page_title = "助成金等一覧情報" %>
   <h1><%= page_title %></h1>
+  <div class="search-container">
+    <%= search_form_for @search_subsidy do |f| %>
+      <%= f.search_field :title_cont %>
+      <%= f.submit "検索" %>
+    <% end %>
+  </div>
   <div class="row my-4">
     <div class="subsidies-list col-md-7 px-3">
       <%= render 'list' %>
