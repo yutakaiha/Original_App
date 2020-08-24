@@ -1,0 +1,24 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 event-show">
+      <h1><%= @event.title %></h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8 col-md-6 bg-image">
+      <%= image_tag(@event.picture, class: "events-image")%>
+    </div>
+  </div>
+  <div class="row mt-1">
+    <div class="subsidies-list col-md-7 px-3">
+      <%= render 'shared/list' %>
+    </div>
+    <div class="side_bar col-md-5 px-3">
+      <%= render 'shared/side_bar' %>
+    </div>
+  </div>
+</div>
+
+

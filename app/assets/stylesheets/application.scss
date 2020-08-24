@@ -177,3 +177,20 @@ section {
     }
   }
 }
+
+.bg-image {
+  height: 80%;
+  margin: 0 auto;
+
+  & .events-image {
+    width: 80%;
+    height: 60%;
+  }
+}
+
+.event-show {
+  margin: 0 auto;
+  margin-bottom: 25px;
+  background-color: $Main;
+  padding-left: 40px;
+}

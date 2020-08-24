@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'events/show'
   root to: "informations#index"
   get 'categories/index'
   get 'subsidies/index'
@@ -6,5 +7,6 @@ Rails.application.routes.draw do
   resources :informations, only: [:index, :show]
   resources :subsidies
   resources :categories, only: [:index, :show]
+  resources :events, only: :show
 
 end
