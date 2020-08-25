@@ -4,7 +4,9 @@
       <div class="home-content">
         <h1 class="page-title">Help Your Life </h1>
         <p>あなたが本当に必要としている助成金等の情報をご提供。</p>
-        <%= link_to '新規登録はこちら', "#", class: "btn btn-info sign-up" %>
+        <% unless user_signed_in? %>
+          <%= link_to '新規登録はこちら', new_user_registration_path , class: "btn btn-info sign-up" %>
+        <% end %>
       </div>
     </div>
   </div> 
