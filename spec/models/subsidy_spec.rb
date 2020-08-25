@@ -1,19 +1,15 @@
 require 'rails_helper'
 
-#expect{X}.to change{Y}.from(a).to(b) 
-#上記は「Xの処理を実行するとY（値）がaからbへ変わることを期待する」と解釈
-
-#expect{X}.to change{Y}.by(-1)
-#by を使うと「（元の個数はともかく）1個減ること」を検証
-
 RSpec.describe Subsidy, type: :model do
 
   let(:category){ Category.create(
           title: "hogehoge",
           picture: "test.png"
         )}
-    
-    let(:subsidy){ category.subsidies.create(
+
+  # let(:subsidy){create(:subsidy, category: category)}
+
+  let(:subsidy){ category.subsidies.create(
           title: "foo",
           content: "foofoo",
           start_date: Time.current,
