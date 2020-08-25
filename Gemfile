@@ -30,6 +30,7 @@ gem "bootstrap4-kaminari-views"
 gem 'impressionist'
 gem "ransack"
 gem "rspec-rails"
+gem "factory_bot_rails"
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
