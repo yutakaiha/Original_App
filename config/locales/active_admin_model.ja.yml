@@ -1,0 +1,56 @@
+ja:
+  activerecord:
+    models:
+      admin_user: "管理者"
+      comment: "コメント"
+      information: "新着情報"
+      subsidy: "助成金・補助金"
+      category: "カテゴリー"
+      event: "ライフイベント"
+      user: "ユーザー"
+    attributes:
+      admin_user:
+        id: "登録番号"
+        email: "メールアドレス"
+        current_sign_in_at: "ログイン状態"
+        sign_in_count: "ログイン回数"
+        created_at: "作成日"
+      information:
+        id: "登録番号"
+        title: "タイトル"
+        content: "内容"
+        created_at: "作成日"
+        updated_at: "更新日"
+        impressions: "PV数"
+      subsidy:
+        id: "登録番号"
+        title: "各種助成金名"
+        content: "助成内容"
+        start_date: "実施日"
+        end_date: "受付終了日"
+        limit_amount: "助成上限額"
+        created_at: "作成日"
+        updated_at: "更新日"
+        category: "分類"
+        event: "ライフイベント"
+      category:
+        id: "No"
+        title: "カテゴリー名"
+        created_at: "作成日"
+        updated_at: "更新日"
+        picture: "イメージ画像"
+        subsidies: "関連する助成金"
+      event:
+        id: "No"
+        title: "ライフイベント名"
+        picture: "イメージ画像"
+        created_at: "作成日"
+        updated_at: "更新日"
+        subsidies: "関連する助成金"
+      user:
+        id: "No"
+        email: "メールアドレス"
+        encrypted_password: "暗号化されたパスワード"
+        reset_password_token: "再設定パスワード用のトークン"
+        reset_password_sent_at: "再設定パスワード用通知日"
+        remember_created_at: "トークン有効期限"

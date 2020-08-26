@@ -31,6 +31,7 @@ gem 'impressionist'
 gem "ransack"
 gem "rspec-rails"
 gem "factory_bot_rails"
+gem 'activeadmin'
 gem "devise"
 gem "devise-i18n"
 # Use Active Storage variant
