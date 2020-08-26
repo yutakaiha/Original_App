@@ -49,6 +49,7 @@ ja:
         subsidies: "関連する助成金"
       user:
         id: "No"
+        nickname: "ニックネーム"
         email: "メールアドレス"
         encrypted_password: "暗号化されたパスワード"
         reset_password_token: "再設定パスワード用のトークン"
