@@ -7,3 +7,5 @@ table_names.each do |table_name|
     require path
   end
 end
+
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
