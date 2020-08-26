@@ -6,6 +6,7 @@ ja:
       information: "新着情報"
       subsidy: "助成金・補助金"
       category: "カテゴリー"
+      event: "ライフイベント"
     attributes:
       admin_user:
         id: "登録番号"
@@ -33,8 +34,15 @@ ja:
         event: "ライフイベント"
       category:
         id: "No"
-        title: "カテゴリー"
+        title: "カテゴリー名"
         created_at: "作成日"
         updated_at: "更新日"
         picture: "イメージ画像"
+        subsidies: "関連する助成金"
+      event:
+        id: "No"
+        title: "ライフイベント名"
+        picture: "イメージ画像"
+        created_at: "作成日"
+        updated_at: "更新日"
         subsidies: "関連する助成金"
