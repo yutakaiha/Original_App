@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :subsidies
   resources :categories, only: [:index, :show]
   resources :events, only: :show
+  resources :questions
 
 
 end
