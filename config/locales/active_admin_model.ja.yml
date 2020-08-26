@@ -4,6 +4,7 @@ ja:
       admin_user: "管理者"
       comment: "コメント"
       information: "新着情報"
+      subsidy: "助成金・補助金"
     attributes:
       admin_user:
         id: "登録番号"
@@ -17,4 +18,15 @@ ja:
         content: "内容"
         created_at: "作成日"
         updated_at: "更新日"
-        impressions_count: "PV数"
+        impressions: "PV数"
+      subsidy:
+        id: "登録番号"
+        title: "各種助成金名"
+        content: "助成内容"
+        start_date: "実施日"
+        end_date: "受付終了日"
+        limit_amount: "助成上限額"
+        created_at: "作成日"
+        updated_at: "更新日"
+        category: "分類"
+        event: "ライフイベント"
