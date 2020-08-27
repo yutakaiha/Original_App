@@ -7,6 +7,7 @@ FactoryBot.define do
     start_date{Time.current}
     end_date{3.days.ago}
     limit_amount{3}
-    event_id{１}
+    event
+    category
   end
 end
