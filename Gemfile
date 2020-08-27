@@ -30,6 +30,7 @@ gem "bootstrap4-kaminari-views"
 gem 'impressionist'
 gem "ransack"
 gem "rspec-rails"
+gem 'spring-commands-rspec'
 gem "factory_bot_rails"
 gem 'activeadmin'
 gem "devise"

@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :event do
+    id{1}
     title{"foofuga"}
-    picture{"hogefuga.png"}
+    picture{"ninnsinn.png"}
   end
 end
