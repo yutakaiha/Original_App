@@ -33,6 +33,9 @@
         <li class="nav-item">
           <%= link_to 'アカウント編集', edit_user_registration_path, class: "nav-link" %>
         </li>
+        <li class="nav-item">
+          <%= link_to '気軽に相談コーナー', questions_path, class: "nav-link" %>
+        </li>
       <% else %>
         <li class="nav-item">
           <%= link_to 'ログイン', new_user_session_path, class: "nav-link" %>

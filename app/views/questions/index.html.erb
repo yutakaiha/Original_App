@@ -5,14 +5,9 @@
       <p>気軽に助成金等に関する手続きなどについて質問してみよう。</p>
     </div>
   </div>
-  <div class="row select-category">
-    <div class="col-lg-6 col-md-4">
-      <p><%= link_to '',  %></p>
-      <p><%= link_to '',  %></p>
-      <p><%= link_to '',  %></p>
-      <p><%= link_to '',  %></p>
-      <p><%= link_to '',  %></p>
-      <p><%= link_to '',  %></p>
+  <div class="row mt-4 select-category">
+    <div class="col-md-12 card-content">
+      <%= render 'shared/categories_card_list' %>
     </div>
   </div>
   <div class="row qanda-main">
@@ -20,18 +15,12 @@
       <thead>
         <tr>
           <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
         </tr>
       </thead>
       <tbody>
         <% items.each do |item| %>
           <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <th scope="row">#</th>
           </tr>
         <% end %>
       </tbody>
