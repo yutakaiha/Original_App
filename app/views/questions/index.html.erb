@@ -7,22 +7,22 @@
   </div>
   <div class="row mt-4 select-category">
     <div class="col-md-12 card-content">
-      <%= render 'shared/categories_card_list' %>
+      <%= render 'questions_category_list' %>
     </div>
   </div>
   <div class="row qanda-main">
     <table class="table table-hover">
       <thead>
         <tr>
-          <th scope="col"></th>
+          <% if @category.present? %>
+            <th scope="col"><%= @category.title %></th>
+          <% else %>
+            <th scope="col">全ての相談一覧</th>
+          <% end %>
         </tr>
       </thead>
       <tbody>
-        <% items.each do |item| %>
-          <tr>
-            <th scope="row">#</th>
-          </tr>
-        <% end %>
+        <%= render 'list_questions' %>
       </tbody>
     </table>
   </div>
