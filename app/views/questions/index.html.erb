@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row qanda-header">
+    <div class="col-md-10">
+      <h1>Q&Aコーナー</h1>
+      <p>気軽に助成金等に関する手続きなどについて質問してみよう。</p>
+    </div>
+  </div>
+  <div class="row mt-4 select-category">
+    <div class="col-md-12 card-content">
+      <%= render 'shared/categories_card_list' %>
+    </div>
+  </div>
+  <div class="row qanda-main">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% items.each do |item| %>
+          <tr>
+            <th scope="row">#</th>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
