@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users
+  get '/users', to: redirect("/users/sign_up")
   root to: "informations#index"
   resources :informations, only: [:index, :show]
   resources :subsidies

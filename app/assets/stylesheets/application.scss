@@ -213,7 +213,7 @@ section {
   margin: 0 auto;
   text-align: center;
   padding: 1.5rem;
-  margin-top: 2rem;
+  margin-top: 5rem;
 
   & .common-form {
     width: 100%;
@@ -261,12 +261,12 @@ section {
 
     & .actions {
       margin-bottom: 20px;
-
-      & input {
-        width: 25%;
-      }
     }
   }
+}
+
+.alert-warning {
+  margin-top: 40px;
 }
 
 .alert-alert {
@@ -295,4 +295,22 @@ section {
 
 .question-title {
   background-color: #eeffff;
+}
+
+@media screen and (min-width:480px) {
+  .actions input {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+  .actions input {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .actions input {
+    width: 30%;
+  }
 }
