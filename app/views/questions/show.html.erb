@@ -1,12 +1,13 @@
 <div class="container question-container">
-  <div class="row question-title">
-    <h2><%= @question.title %></h2>
+  <div class="row">
+    <div class="col-8 mb-3 question-title">
+      <h2><%= @question.title %></h2>
+    </div>
   </div>
   <div class="row">
     <div class="col-8 question-main">
       <div class="questioner-info">
         <div class="questioner-image">
-        
           <span><%= @question.user.nickname %></span>
         </div>
         <p><%= @question.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
@@ -21,8 +22,8 @@
       </div>
     </div>
     <div class="col-4 qanda-sidebar">
-      <div class="ranking-by-category">
-      
+      <div class="associate-questions">
+
       </div>
     </div>
   </div>

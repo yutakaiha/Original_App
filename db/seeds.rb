@@ -1,4 +1,4 @@
-table_names = %w[information categories events subsidies users questions]
+table_names = %w[information categories events subsidies users questions answers]
 table_names.each do |table_name|
   environment = (Rails.env == "test") ? "development" : Rails.env
   path = Rails.root.join("db/seeds", environment, table_name + ".rb")

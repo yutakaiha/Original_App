@@ -1,6 +1,7 @@
 class Question < ApplicationRecord
   belongs_to :user
   belongs_to :category
+  has_many :answers, dependent: :destroy
   is_impressionable counter_cache: true
 
   def self.ransackable_attributes(auth_object = nil)
