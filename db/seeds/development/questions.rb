@@ -7,7 +7,8 @@ BESTANSWER = (1..50).to_a
     best_answer_id: BESTANSWER.sample,
     created_at: 150.days.ago.advance(days: rand(50)),
     category_id: CATEGORYID[i % 6],
-    user_id: rand(1..99)
+    user_id: rand(1..99),
+    impressions_count: rand(100)
   )
 end
 

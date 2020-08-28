@@ -12,5 +12,6 @@ class QuestionsController < ApplicationController
 
   def show
     @question = Question.find(params[:id])
+    impressionist(@question, nil, :unique => [:session_hash])
   end
 end

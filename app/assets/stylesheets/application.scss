@@ -319,10 +319,17 @@ section {
   & .questioner-info {
     display: flex;
     justify-content: space-between;
-
-
-
   }
+}
+
+.table-title {
+  font-size: larger;
+  background-color: rgb(169, 225, 233);
+}
+
+.title_of_category {
+  font-size: medium;
+  background-color: rgb(229, 210, 238);
 }
 
 
