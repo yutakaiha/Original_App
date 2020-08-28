@@ -7,7 +7,7 @@
 <% else %>
   <% @all_questions.each.with_index(1) do |question, i| %>
     <tr>
-      <th scope="row">Q. <%= n %> <%= question.title %></th>
+      <th scope="row">Q. <%= i %> <%= question.title %></th>
     </tr>
   <% end %>
 <% end %>
