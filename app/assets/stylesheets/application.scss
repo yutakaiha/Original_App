@@ -41,7 +41,10 @@ body {
   align-items: center;
 
   & nav {
+    padding-top: 53px;
     width: 100%;
+    position: fixed;
+    z-index: 2;
   }
 }
 
@@ -123,6 +126,7 @@ section {
 
           & .item2 {
             width: 60%;
+            text-align: left;
           }
         }
       }
