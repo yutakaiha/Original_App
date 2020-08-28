@@ -15,6 +15,9 @@
         <div class="question-content">
           <%= simple_format @question.content %>
         </div>
+        <div class="impression-count">
+          <span><i class="far fa-eye"></i></span><span><%= @question.impressions_count %></span>
+        </div>
       </div>
     </div>
     <div class="col-4 qanda-sidebar">
@@ -37,6 +40,7 @@
         <div class="question-content">
           <%= simple_format @question.content %>
         </div>
+        
       </div>
     </div>
   </div>
