@@ -17,7 +17,7 @@
     <p>そのような機会損失を少しでも減らすために、多くの役に立つ情報をご提供します。</p>
   </section>
   <section class="info">
-    <h2 class="info-title">NEWS（新着情報）</h2>
+    <h2 id="information" class="info-title">NEWS（新着情報）</h2>
     <table class="info-content">
       <% @informations.each do |information| %>
         <tr class="info-items">
@@ -27,7 +27,7 @@
       <% end %>
     </table>
     <div class="pagination">
-      <p><%= paginate @informations %></p>
+      <p><%= paginate @informations, params: {anchor: "information"} %></p>
     </div>
   </section>
   <div class="blank">
