@@ -1,0 +1,66 @@
+<div class="container question-container">
+  <div class="row question-title">
+    <h2><%= @question.title %></h2>
+  </div>
+  <div class="row">
+    <div class="col-8 question-main">
+      <div class="questioner-info">
+        <div class="questioner-image">
+        
+          <span><%= @question.user.nickname %></span>
+        </div>
+        <p><%= @question.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
+      </div>
+      <div class="question-info">
+        <div class="question-content">
+          <%= simple_format @question.content %>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 qanda-sidebar">
+      <div class="ranking-by-category">
+      
+      </div>
+    </div>
+  </div>
+
+  <div class="row best_answer_container">
+    <div class="col-8">
+      <div class="answer-info">
+        <div class="answer-image">
+        
+        </div>
+        <%# ⬇️あとでベストアンサーの人に修正する⬇️ %>
+        <p><%= @question.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
+      </div>
+      <div class="question-info">
+        <div class="question-content">
+          <%= simple_format @question.content %>
+        </div>
+      </div>
+    </div>
+    <div class="col-4 qanda-sidebar">
+      <div class="ranking-by-category">
+      
+      </div>
+    </div>
+  </div>
+
+  <div class="row answer-except-best-answer">
+    <div class="col-8">
+      <%# ここにeach文挿入 %>
+      <div class="answer-info">
+        <div class="answer-image">
+        
+        </div>
+        <%# ⬇️あとでベストアンサーの人に修正する⬇️ %>
+        <p><%= @question.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
+      </div>
+      <div class="question-info">
+        <div class="question-content">
+          <%= simple_format @question.content %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

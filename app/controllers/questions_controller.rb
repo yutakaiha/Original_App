@@ -9,4 +9,8 @@ class QuestionsController < ApplicationController
       @all_questions = Question.order(created_at: :desc).page(params[:page]).per(7)
     end
   end
+
+  def show
+    @question = Question.find(params[:id])
+  end
 end

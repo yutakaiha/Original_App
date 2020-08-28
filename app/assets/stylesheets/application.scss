@@ -17,6 +17,10 @@ body {
     "ヒラギノ角ゴ Pro W3", sans-serif;
 }
 
+.base-container {
+  position: relative;
+}
+
 //レイアウト共通化
 
 //categoryとquestionの一覧ページ共通部分
@@ -159,7 +163,10 @@ section {
 }
 
 .container {
+  position: absolute;
+  top: 40px;
   margin-top: 40px;
+
 
   & .search-container {
     margin-top: 17px;
@@ -209,11 +216,11 @@ section {
 
 //ログイン画面とアカウント編集画面のレイアウト
 .common-container {
-  max-width: 850px;
+  max-width: 100%;
   margin: 0 auto;
   text-align: center;
   padding: 1.5rem;
-  margin-top: 5rem;
+  margin-top: 4rem;
 
   & .common-form {
     width: 100%;
@@ -265,8 +272,18 @@ section {
   }
 }
 
+.alert-success {
+  margin-top: 40px;
+  padding-bottom: 0px;
+
+  & p {
+    padding-top: 11px;
+  }
+}
+
 .alert-warning {
   margin-top: 40px;
+  padding-bottom: 0px;
 }
 
 .alert-alert {
@@ -292,11 +309,27 @@ section {
   @include card-style();
 }
 
-
 .question-title {
   background-color: #eeffff;
 }
 
+.question-main {
+  border: 2px solid $Main;
+
+  & .questioner-info {
+    display: flex;
+    justify-content: space-between;
+
+
+
+  }
+}
+
+
+
+
+
+//レスポンシブ メディアクエリ
 @media screen and (min-width:480px) {
   .actions input {
     width: 60%;

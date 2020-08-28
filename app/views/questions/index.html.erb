@@ -25,5 +25,14 @@
         <%= render 'list_questions' %>
       </tbody>
     </table>
+    <% if @category.present? %>
+      <div class="questions-pagination">
+        <%= paginate @questions, params: {anchor: "questions"} %>
+      </div>
+    <% else %>
+      <div class="questions-pagination">
+        <%= paginate @all_questions, params: {anchor: "questions"} %>
+      </div>
+    <% end %>
   </div>
 </div>
