@@ -1,8 +1,16 @@
 <div class="container">
   <div class="row qanda-header">
-    <div class="col-md-10">
+    <div class="col-md-12 text-right qanda-search">
+      <%= search_form_for @search, url: questions_path(anchor: "questions") do |f| %>
+        <%= f.label :title_cont, "Q&A検索" %>
+        <%= f.search_field :title_cont, placeholder: "キーワードで探す" %>
+        <%= f.submit "検索"%>
+      <% end %>
+    </div>
+    <div class="col-md-12">
       <h1>Q&Aコーナー</h1>
-      <p>気軽に助成金等に関する手続きなどについて質問してみよう。</p>
+      <p>■気軽に助成金等に関する手続きなどについて質問してみよう。</p>
+      <h3 class="text-center">カテゴリで検索</h3>
     </div>
   </div>
   <div class="row mt-4 select-category">
@@ -11,19 +19,42 @@
     </div>
   </div>
   <div class="row qanda-main">
-    <table class="table table-hover">
-      <thead id="questions" class ="question-title">
-        <tr>
-          <% if @category.present? %>
-            <th scope="col"><%= @category.title %></th>
-          <% else %>
-            <th scope="col">全ての相談一覧</th>
-          <% end %>
-        </tr>
-      </thead>
-      <tbody>
-        <%= render 'list_questions' %>
-      </tbody>
-    </table>
+    <div class="col-7">
+      <table class="table table-hover">
+        <thead id="questions" class ="question-title">
+          <tr>
+            <% if @category.present? %>
+              <th scope="col"><%= @category.title %></th>
+            <% else %>
+              <th scope="col">全ての相談一覧</th>
+            <% end %>
+          </tr>
+        </thead>
+        <tbody>
+          <%= render 'list_questions' %>
+        </tbody>
+      </table>
+      <% if @category.present? %>
+        <div class="questions-pagination">
+          <%= paginate @questions, params: {anchor: "questions"} %>
+        </div>
+      <% else %>
+        <div class="questions-pagination">
+          <%= paginate @all_questions, params: {anchor: "questions"} %>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-5 qanda-sidebar">
+      <% if @category.present? %>
+        <div class="ranking-by-category">
+          <%= render 'ranking_by_category' %>
+        </div>
+      <% else %>
+        <div class="ranking-by-all">
+          <%= render 'ranking_by_all' %>
+        </div>
+      <% end %>
+      
+    </div>
   </div>
 </div>
