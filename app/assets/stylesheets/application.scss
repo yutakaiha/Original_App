@@ -17,6 +17,22 @@ body {
     "ヒラギノ角ゴ Pro W3", sans-serif;
 }
 
+//レイアウト共通化
+
+//categoryとquestionの一覧ページ共通部分
+@mixin card-style {
+  & .card-content {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    & .card-style {
+      margin-left: 10px;
+      margin-bottom: 35px;
+    }
+  }
+}
+
 //TOP
 
 .header-container {
@@ -98,7 +114,7 @@ section {
 
         & .info-items {
           width: 80%;
-          border-bottom: 0.5px solid silver;
+          border-bottom: 0.5px solid rgba(207, 200, 200, 0.5);
           margin-bottom: 30px;
 
           & .item1 {
@@ -166,17 +182,9 @@ section {
   margin-top: 40px;
   text-align: center;
 
-  & .card-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-
-    & .card-style {
-      margin-left: 10px;
-      margin-bottom: 35px;
-    }
-  }
+  @include card-style();
 }
+
 
 .bg-image {
   height: 80%;
@@ -272,4 +280,15 @@ section {
   & h2 {
     font-size: 1.5rem;
   }
+}
+
+//質問一覧ページのレイアウト
+.select-category {
+  margin-top: 40px;
+  @include card-style();
+}
+
+
+.question-title {
+  background-color: #eeffff;
 }

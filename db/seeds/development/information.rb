@@ -1,6 +1,7 @@
 
 
-titles = %w(新型コロナ特別定額給付金 新型コロナ感染症対応休業支援金 雇用調整助成金 住居確保給付金 ひとり親世帯臨時特別給付金)
+titles = %w(新型コロナ特別定額給付金 新型コロナ感染症対応休業支援金 雇用調整助成金 住居確保給付金 ひとり親世帯臨時特別給付金
+            生活再建支援金給付事業 スポーツ活動における県外派遣補助金 家賃支援給付金)
 
 content = <<-"EOS"
 
@@ -34,9 +35,9 @@ content = <<-"EOS"
 
 EOS
 
-0.upto(49) do |i|
+0.upto(63) do |i|
   Information.create!(
-    title: titles[i % 5],
+    title: titles[i % 8],
     content: content,
     impressions_count: rand(100)
   )
