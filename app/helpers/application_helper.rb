@@ -19,4 +19,12 @@ module ApplicationHelper
   def best_answer_date(answer)
     answer.pluck(:created_at)[0].strftime("%Y/%m/%d %H:%M:%S")
   end
+
+  def best_answer_content(answer)
+    answer.pluck(:content)[0]
+  end
+
+  def answer_name(answer)
+    User.find_by(id: answer.user_id).nickname
+  end
 end

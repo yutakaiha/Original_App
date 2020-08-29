@@ -6,7 +6,6 @@ class QuestionsController < ApplicationController
       @category = Category.find(params[:category_id])
       @search = @category.questions.ransack(params[:q])
       @questions = @search.result.page(params[:page]).per(7)
-      # @questions = @category.questions.order(created_at: :desc).page(params[:page]).per(7)
     else
       @search = Question.ransack(params[:q])
       @all_questions = @search.result.page(params[:page]).per(7)
@@ -17,8 +16,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     impressionist(@question, nil, :unique => [:session_hash])
     @answers = @question.answers
-    # @best_answer = @answers.best_answer(@question)
-    @best_answer = @answers.where("id = ?", @question.best_answer_id)
+    @best_answer = @answers.best_answer(@question)
   end
 
 end

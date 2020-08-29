@@ -6,7 +6,7 @@ class Question < ApplicationRecord
 
   # ベストアンサー（relationオブジェクトを返す） 
   # nil、falseの場合allがallクエリメソッドが適用されるためビュー側で条件分岐
-  # scope :answer_check, ->(question) {where("answers.id = ?", question.best_answer_id)}
+  scope :answer_check, ->(question) {where("answers.id = ?", question.best_answer_id)}
   
   
 

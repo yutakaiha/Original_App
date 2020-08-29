@@ -1,10 +1,10 @@
 <div class="container question-container">
-  <div class="row">
+  <div class="row ml-4">
     <div class="col-md-7  mb-3 question-title">
       <h2><%= @question.title %></h2>
     </div>
   </div>
-  <div class="row">
+  <div class="row ml-4">
     <div class="col-md-7 question-main">
       <div class="questioner-info">
         <div class="questioner-image">
@@ -27,20 +27,23 @@
       </div>
     </div>
   </div>
-
-  <div class="row best-answer-container">
-    <div class="col-md-7">
+  
+  <div class="row best-answer-container ml-4">
+    <div class="col-md-7 border border-warning">
+      <div class="best-answer-title">
+        <h3>★ベストアンサー★</h3>
+      </div>
       <% if @best_answer.count == 1 %>
         <div class="answer-info">
           <div class="answer-image">
             <%# 後々イメージ画像挿入 %>
             <span><%= best_answer_name(@best_answer) %></span>
           </div>
-          <p><%= best_answer_date(@best_answer) %></p>
+          <p class="text-right mb-4"><%= best_answer_date(@best_answer) %></p>
         </div>
         <div class="question-info">
           <div class="question-content">
-            <%= simple_format @question.content %>
+            <%= simple_format best_answer_content(@best_answer) %>
           </div>
         </div>
       <% else %>
@@ -52,21 +55,9 @@
     </div>
   </div>
 
-  <div class="row answer-except-best-answer">
-    <div class="col-md-7">
-      <%# ここにeach文挿入 %>
-      <div class="answer-info">
-        <div class="answer-image">
-        
-        </div>
-        <%# ⬇️あとでベストアンサーの人に修正する⬇️ %>
-        <p><%= @question.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
-      </div>
-      <div class="question-info">
-        <div class="question-content">
-          <%= simple_format @question.content %>
-        </div>
-      </div>
+  <div class="row ml-4 answer-except-best-answer">
+    <div class="col-md-7 border border-info">
+      <%= render 'all_answers_of_question' %>
     </div>
     <div class="col-md-5">
     
