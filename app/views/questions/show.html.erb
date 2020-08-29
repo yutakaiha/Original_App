@@ -1,11 +1,11 @@
 <div class="container question-container">
   <div class="row">
-    <div class="col-7 mb-3 question-title">
+    <div class="col-md-7  mb-3 question-title">
       <h2><%= @question.title %></h2>
     </div>
   </div>
   <div class="row">
-    <div class="col-7 question-main">
+    <div class="col-md-7 question-main">
       <div class="questioner-info">
         <div class="questioner-image">
           <span><%= @question.user.nickname %></span>
@@ -21,15 +21,15 @@
         </div>
       </div>
     </div>
-    <div class="col-5 qanda-sidebar">
+    <div class="col-md-5 qanda-sidebar">
       <div class="same-category-questions">
         <%= render "same_category_questions" %>
       </div>
     </div>
   </div>
 
-  <div class="row best_answer_container">
-    <div class="col-md-10">
+  <div class="row best-answer-container">
+    <div class="col-md-7">
       <div class="answer-info">
         <div class="answer-image">
         
@@ -44,10 +44,13 @@
         
       </div>
     </div>
+    <div class="col-md-5 sidebar">
+    
+    </div>
   </div>
 
   <div class="row answer-except-best-answer">
-    <div class="col-8">
+    <div class="col-md-7">
       <%# ここにeach文挿入 %>
       <div class="answer-info">
         <div class="answer-image">
@@ -62,5 +65,9 @@
         </div>
       </div>
     </div>
+    <div class="col-md-5">
+    
+    </div>
   </div>
 </div>
+  
