@@ -1,14 +1,22 @@
-
-<% @answers.each do |answer| %>
-  <div class="answer-info">
-    <div class="answer-image">
-        <span><%= answer_name(answer) %></span>
+<% if @answers.any? %>
+  <% @answers.each do |answer| %>
+    <div class="border border-info py-4">
+      <div class="answer-info">
+        <div class="answer-image">
+            <span><%= answer_name(answer) %></span>
+        </div>  
+        <p><%= answer.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
+      </div>
+      <div class="question-info">
+        <div class="question-content">
+          <%= simple_format answer.content %>
+        </div>
+      </div>  
     </div>  
-    <p><%= answer.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
+  <% end %>
+  <div class="pagination">
+    <%= paginate @answers, params: {anchor: "all-answers"} %>
   </div>
-  <div class="question-info">
-    <div class="question-content">
-      <%= simple_format answer.content %>
-    </div>
-  </div>  
+<% else %>
+  <h3>※回答はまだありません。</h3>
 <% end %>

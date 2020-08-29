@@ -29,38 +29,24 @@
   </div>
   
   <div class="row best-answer-container ml-4">
-    <div class="col-md-7 border border-warning">
+    <div class="col-md-7 border border-warning best-answer-bg">
       <div class="best-answer-title">
         <h3>★ベストアンサー★</h3>
       </div>
-      <% if @best_answer.count == 1 %>
-        <div class="answer-info">
-          <div class="answer-image">
-            <%# 後々イメージ画像挿入 %>
-            <span><%= best_answer_name(@best_answer) %></span>
-          </div>
-          <p class="text-right mb-4"><%= best_answer_date(@best_answer) %></p>
-        </div>
-        <div class="question-info">
-          <div class="question-content">
-            <%= simple_format best_answer_content(@best_answer) %>
-          </div>
-        </div>
-      <% else %>
-        <h3>現在ベストアンサーに登録されているものはありません</h3>
-      <% end %>   
+      <%= render 'best_answer_content' %>
     </div>
     <div class="col-md-5 sidebar">
-    
+      <%= render 'ranking_by_all' %>
     </div>
   </div>
 
-  <div class="row ml-4 answer-except-best-answer">
-    <div class="col-md-7 border border-info">
+  <div class="row ml-4 ">
+    <div class="col-md-7 answer-except-best-answer">
+      <h3 id="all-answers" class="mb-3">○ベストアンサー以外の回答○</h3>
       <%= render 'all_answers_of_question' %>
     </div>
     <div class="col-md-5">
-    
+      
     </div>
   </div>
 </div>

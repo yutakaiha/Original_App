@@ -334,6 +334,14 @@ section {
 
 .best-answer-container {
   margin: 80px 0;
+
+  & .best-answer-bg {
+    background-color: #f5c6cb;
+  }
+}
+
+.answer-except-best-answer {
+  background-color: #eeffff;
 }
 
 //レスポンシブ メディアクエリ
