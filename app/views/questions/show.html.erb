@@ -30,19 +30,22 @@
 
   <div class="row best-answer-container">
     <div class="col-md-7">
-      <div class="answer-info">
-        <div class="answer-image">
-        
+      <% if @best_answer.count == 1 %>
+        <div class="answer-info">
+          <div class="answer-image">
+            <%# 後々イメージ画像挿入 %>
+            <span><%= best_answer_name(@best_answer) %></span>
+          </div>
+          <p><%= best_answer_date(@best_answer) %></p>
         </div>
-        <%# ⬇️あとでベストアンサーの人に修正する⬇️ %>
-        <p><%= @question.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
-      </div>
-      <div class="question-info">
-        <div class="question-content">
-          <%= simple_format @question.content %>
+        <div class="question-info">
+          <div class="question-content">
+            <%= simple_format @question.content %>
+          </div>
         </div>
-        
-      </div>
+      <% else %>
+        <h3>現在ベストアンサーに登録されているものはありません</h3>
+      <% end %>   
     </div>
     <div class="col-md-5 sidebar">
     

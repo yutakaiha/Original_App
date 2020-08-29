@@ -16,6 +16,9 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     impressionist(@question, nil, :unique => [:session_hash])
+    @answers = @question.answers
+    # @best_answer = @answers.best_answer(@question)
+    @best_answer = @answers.where("id = ?", @question.best_answer_id)
   end
 
 end
