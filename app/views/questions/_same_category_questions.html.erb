@@ -1,15 +1,11 @@
-<div class="table-title">関連Q＆A？</div>
-<div class="title_of_category"><%= @category.title %></div>
 <table class="table table-striped">
   <thead class="table-ligth">
     <tr>
-      <th scope="col">順位</th>
-      <th>タイトル</th>
-      <th>PV数</th>
+      <th scope="col">同カテゴリ内Q＆A</th>
     </tr>
   </thead>
   <tbody>
-    <% ranking_of_category(@category).each.with_index(1) do |question, i| %>
+    <% same_category_questions(@question).each.with_index(1) do |question, i| %>
       <tr>
         <td>
           <%= i %>
@@ -24,3 +20,6 @@
     <% end %>
   </tbody>
 </table>
+<div>
+  <p><%= paginate same_category_questions(@question) %></p>
+</div>

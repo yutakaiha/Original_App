@@ -1,11 +1,11 @@
 <div class="container question-container">
   <div class="row">
-    <div class="col-8 mb-3 question-title">
+    <div class="col-7 mb-3 question-title">
       <h2><%= @question.title %></h2>
     </div>
   </div>
   <div class="row">
-    <div class="col-8 question-main">
+    <div class="col-7 question-main">
       <div class="questioner-info">
         <div class="questioner-image">
           <span><%= @question.user.nickname %></span>
@@ -21,9 +21,9 @@
         </div>
       </div>
     </div>
-    <div class="col-4 qanda-sidebar">
-      <div class="associate-questions">
-
+    <div class="col-5 qanda-sidebar">
+      <div class="same-category-questions">
+        <%= render "same_category_questions" %>
       </div>
     </div>
   </div>
