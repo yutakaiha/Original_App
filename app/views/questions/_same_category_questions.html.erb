@@ -1,0 +1,25 @@
+<table class="table table-striped">
+  <thead class="table-ligth">
+    <tr>
+      <th colspan="3">同カテゴリ内の最新のQ＆A</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% same_category_questions(@question).each.with_index(1) do |question| %>
+      <tr>
+        <td>
+          <%= question.created_at.strftime("%Y/%m/%d") %>
+        </td>
+        <td>
+          <%= link_to_unless_current question.title.truncate(10), question%>
+        </td>
+        <td>
+          <span><i class="far fa-eye"></i></span> <%= question.impressions_count %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div>
+  <p><%= paginate same_category_questions(@question) %></p>
+</div>

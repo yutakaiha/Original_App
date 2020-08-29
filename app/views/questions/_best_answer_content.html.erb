@@ -1,0 +1,18 @@
+<div class="best-answer-content">
+  <% if @best_answer.count == 1 %>
+    <div class="answer-info">
+      <div class="answer-image">
+        <%# 後々イメージ画像挿入 %>
+        <span><%= best_answer_name(@best_answer) %></span>
+      </div>
+      <p class="text-right mb-4"><%= best_answer_date(@best_answer) %></p>
+    </div>
+    <div class="question-info">
+      <div class="question-content">
+        <%= simple_format best_answer_content(@best_answer) %>
+      </div>
+    </div>
+  <% else %>
+    <h3>※現在ベストアンサーに登録されているものはありません。</h3>
+  <% end %>  
+</div>   

@@ -1,11 +1,11 @@
 <div class="container question-container">
-  <div class="row">
-    <div class="col-8 mb-3 question-title">
+  <div class="row ml-4">
+    <div class="col-md-7  mb-3 question-title">
       <h2><%= @question.title %></h2>
     </div>
   </div>
-  <div class="row">
-    <div class="col-8 question-main">
+  <div class="row ml-4">
+    <div class="col-md-7 question-main">
       <div class="questioner-info">
         <div class="questioner-image">
           <span><%= @question.user.nickname %></span>
@@ -21,46 +21,33 @@
         </div>
       </div>
     </div>
-    <div class="col-4 qanda-sidebar">
-      <div class="associate-questions">
-
+    <div class="col-md-5 qanda-sidebar">
+      <div class="same-category-questions">
+        <%= render "same_category_questions" %>
       </div>
     </div>
   </div>
-
-  <div class="row best_answer_container">
-    <div class="col-md-10">
-      <div class="answer-info">
-        <div class="answer-image">
-        
-        </div>
-        <%# ⬇️あとでベストアンサーの人に修正する⬇️ %>
-        <p><%= @question.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
+  
+  <div class="row best-answer-container ml-4">
+    <div class="col-md-7 border border-warning best-answer-bg">
+      <div class="best-answer-title">
+        <h3>★ベストアンサー★</h3>
       </div>
-      <div class="question-info">
-        <div class="question-content">
-          <%= simple_format @question.content %>
-        </div>
-        
-      </div>
+      <%= render 'best_answer_content' %>
+    </div>
+    <div class="col-md-5 sidebar">
+      <%= render 'ranking_by_all' %>
     </div>
   </div>
 
-  <div class="row answer-except-best-answer">
-    <div class="col-8">
-      <%# ここにeach文挿入 %>
-      <div class="answer-info">
-        <div class="answer-image">
-        
-        </div>
-        <%# ⬇️あとでベストアンサーの人に修正する⬇️ %>
-        <p><%= @question.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
-      </div>
-      <div class="question-info">
-        <div class="question-content">
-          <%= simple_format @question.content %>
-        </div>
-      </div>
+  <div class="row ml-4 ">
+    <div class="col-md-7 answer-except-best-answer">
+      <h3 id="all-answers" class="mb-3">○ベストアンサー以外の回答○</h3>
+      <%= render 'all_answers_of_question' %>
+    </div>
+    <div class="col-md-5">
+      
     </div>
   </div>
 </div>
+  
