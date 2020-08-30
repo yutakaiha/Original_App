@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-8 col-lg-10">
+      <%= form_with model: @question, local: true do |f| %>
+        <%= f.select :category_id, select_category_form, prompt: "カテゴリを選択してください", class: "form-controll"%>
+        <%= f.label :title %>
+        <%= f.text_field :title, class: "form-controll", placeholder: "タイトルを入力してください", class: "form-controll"%>
+        <%= f.text_area :content, class: "form-controll", placeholder: "質問内容を記載してください", class: "form-controll" %>
+        <%= f.submit "投稿する", class: "btn btn-info" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
