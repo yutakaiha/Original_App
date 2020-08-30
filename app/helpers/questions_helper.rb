@@ -3,8 +3,8 @@ module QuestionsHelper
     category.questions.order(impressions_count: :desc).limit(5)
   end
 
-  def ranking_of_all
-    Question.order(impressions_count: :desc).limit(5)
+  def ranking_by_all
+    Question.where.not(impressions_count: 0, impressions_count: nil).order(impressions_count: :desc).limit(5)
   end
 
   def same_category_questions(question) 
