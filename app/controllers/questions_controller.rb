@@ -19,7 +19,7 @@ class QuestionsController < ApplicationController
   
   def create 
     @questinon = current_user.questions.create!(question_params)
-    redirect_to :questions, success: "質問を投稿しました！"
+    redirect_to :questions, notice: "質問を投稿しました！"
   end
 
   def show
