@@ -12,6 +12,16 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def new
+    @question = Question.new
+    @categories = Category.all
+  end
+  
+  def create 
+    @questinon = current_user.questions.create!(question_params)
+    redirect_to :questions, success: "質問を投稿しました！"
+  end
+
   def show
     @question = Question.find(params[:id])
     impressionist(@question, nil, :unique => [:session_hash])
@@ -19,4 +29,9 @@ class QuestionsController < ApplicationController
     @best_answer = @answers.best_answer(@question)
   end
 
+  private
+
+  def question_params
+    params.require(:question).permit(:title, :content, :category_id)
+  end
 end
