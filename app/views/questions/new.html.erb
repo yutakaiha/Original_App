@@ -1,12 +1,23 @@
 <div class="container">
-  <div class="row mt-5">
-    <div class="col-md-8 col-lg-10">
+  <div class="row mt-5 question-new-content">
+    <div class="col-md-8new-page-title ml-3">
+        <h3>質問・相談をしてみよう！</h3>
+      </div>
+    <div class="col-sm-6 col-md-8 col-lg-10">
       <%= form_with model: @question, local: true do |f| %>
-        <%= f.select :category_id, select_category_form, prompt: "カテゴリを選択してください", class: "form-controll"%>
-        <%= f.label :title %>
-        <%= f.text_field :title, class: "form-controll", placeholder: "タイトルを入力してください", class: "form-controll"%>
-        <%= f.text_area :content, class: "form-controll", placeholder: "質問内容を記載してください", class: "form-controll" %>
-        <%= f.submit "投稿する", class: "btn btn-info" %>
+        <div class="category-form my-4">
+          <p class="mb-0"><%= f.label :category_id, "質問カテゴリ" %></p>
+          <%= f.select :category_id, select_category_form, prompt: "カテゴリを選択してください", class: "form-controll"%>
+        </div>
+        <div class="title-form my-4">
+          <p class="mb-0"><%= f.label :title , "質問タイトル"%></p>
+          <%= f.text_field :title, class: "form-controll", placeholder: "タイトルを入力してください", class: "form-controll", size: 60%>
+        </div>
+        <div class="content-form my-3">
+          <p class="mb-0"><%= f.label :content, "質問内容" %></p>
+          <%= f.text_area :content, class: "form-controll", placeholder: "質問内容を記載してください", class: "form-controll", size: "60x10" %>
+        </div>
+        <p><%= f.submit "投稿する", class: "btn btn-info" %></p>
       <% end %>
     </div>
   </div>
