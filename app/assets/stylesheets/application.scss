@@ -344,7 +344,24 @@ section {
   background-color: #eeffff;
 }
 
+.question-new-content {
+  max-width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 25%;
+
+
+}
+
+#category_id {
+  padding: 5px 0;
+  font-size: 90%;
+}
+
+
+
 //レスポンシブ メディアクエリ
+
 @media screen and (min-width:480px) {
   .actions input {
     width: 60%;
