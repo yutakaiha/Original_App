@@ -26,7 +26,7 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     impressionist(@question, nil, :unique => [:session_hash])
-    @answers = @question.answers.page(params[:page]).per(3)
+    @answers = @question.answers.order(created_at: :desc).page(params[:page]).per(3)
     @best_answer = @answers.best_answer(@question)
   end
 

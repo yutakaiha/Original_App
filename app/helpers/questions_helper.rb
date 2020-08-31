@@ -1,6 +1,6 @@
 module QuestionsHelper
-  def ranking_of_category(category)
-    category.questions.order(impressions_count: :desc).limit(5)
+  def ranking_by_category(category)
+    category.questions.where.not(impressions_count: 0, impressions_count: nil).order(impressions_count: :desc).limit(5)
   end
 
   def ranking_by_all
