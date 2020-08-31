@@ -1,14 +1,15 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!
+  before_action :correct_user?, only: :destroy
 
   def index
     if params[:category_id].present?
       @category = Category.find(params[:category_id])
       @search = @category.questions.ransack(params[:q])
-      @questions = @search.result.page(params[:page]).per(7)
+      @questions = @search.result.order(created_at: :desc).page(params[:page]).per(7)
     else
       @search = Question.ransack(params[:q])
-      @all_questions = @search.result.page(params[:page]).per(7)
+      @all_questions = @search.result.order(created_at: :desc).page(params[:page]).per(7)
     end
   end
 
@@ -29,9 +30,21 @@ class QuestionsController < ApplicationController
     @best_answer = @answers.best_answer(@question)
   end
 
+  def destroy
+    @question.destroy
+    redirect_to questions_path, notice: "投稿した質問を削除しました！"
+  end
+
   private
 
   def question_params
     params.require(:question).permit(:title, :content, :category_id)
+  end
+
+  def correct_user?
+    @question = Question.find(params[:id])
+    @user = User.find_by(id: @question.user_id)
+    redirect_to questions_path unless current_user == @user
+    @question
   end
 end

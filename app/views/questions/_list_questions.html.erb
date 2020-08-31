@@ -1,13 +1,29 @@
 <% if @category.present? %>
   <% @questions.each.with_index(1) do |question, i| %>
     <tr>
-      <th scope="row">Q. <%= i %> <%=link_to question.title, question %></th>
+      <th scope="row">
+        Q. <%= i %> <%=link_to question.title, question %>
+        <span class="post-day">(投稿日 ： <%= question.created_at.strftime("%Y/%m/%d") %>)</span>
+      </th>
+      <td>
+        <% if correct_user?(question) %>
+          <%= link_to '削除', question, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-info btn-sm" %>
+        <% end %>
+      </td>
     </tr>
   <% end %>
 <% else %>
   <% @all_questions.each.with_index(1) do |question, i| %>
     <tr>
-      <th scope="row">Q. <%= i %> <%= link_to question.title, question %></th>
+      <th scope="row">
+        Q. <%= i %> <%= link_to question.title, question %>
+        <span class="post-day">(投稿日 ： <%= question.created_at.strftime("%Y/%m/%d") %>)</span>
+      </th>
+      <td>
+        <% if correct_user?(question) %>
+          <%= link_to '削除', question, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-info btn-sm" %>
+        <% end %>
+      </td>
     </tr>
   <% end %> 
 <% end %>

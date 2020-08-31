@@ -322,6 +322,12 @@ section {
   }
 }
 
+.post-day {
+  display: inline-block;
+  padding-left: 12px;
+  font-size: 0.7rem;
+}
+
 .table-title {
   font-size: larger;
   background-color: rgb(169, 225, 233);
@@ -349,7 +355,6 @@ section {
   position: absolute;
   top: 50%;
   left: 25%;
-
 
 }
 
