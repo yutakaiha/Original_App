@@ -27,7 +27,13 @@
       </div>
     </div>
   </div>
-  
+  <div class="row">
+    <div class="col-md-5 ml-4 mt-3">
+      <% if correct_user?(@question) %>
+        <td><%= link_to '投稿を削除する', @question, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-primary" %></td>
+      <% end %>
+    </div>
+  </div>
   <div class="row best-answer-container ml-4">
     <div class="col-md-7 border border-warning best-answer-bg">
       <div class="best-answer-title">

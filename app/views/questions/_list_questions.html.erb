@@ -1,7 +1,13 @@
 <% if @category.present? %>
   <% @questions.each.with_index(1) do |question, i| %>
     <tr>
-      <th scope="row">Q. <%= i %> <%=link_to question.title, question %></th>
+      <th scope="row">
+        Q. <%= i %> <%=link_to question.title, question %>
+        <span class="post-day">(投稿日 ： <%= question.created_at.strftime("%Y/%m/%d") %>)</span>
+      </th>
+      <% if correct_user?(question) %>
+        <td><%= link_to '削除', question, method: :delete, data: {confirm: "本当に削除しますか？"} %></td>
+      <% end %>
     </tr>
   <% end %>
 <% else %>
@@ -11,6 +17,9 @@
         Q. <%= i %> <%= link_to question.title, question %>
         <span class="post-day">(投稿日 ： <%= question.created_at.strftime("%Y/%m/%d") %>)</span>
       </th>
+      <% if correct_user?(question) %>
+        <td><%= link_to '削除', question, method: :delete, data: {confirm: "本当に削除しますか？"} %></td>
+      <% end %>
     </tr>
   <% end %> 
 <% end %>
