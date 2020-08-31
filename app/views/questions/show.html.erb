@@ -8,9 +8,9 @@
     <div class="col-md-7 question-main">
       <div class="questioner-info">
         <div class="questioner-image">
-          <span><%= @question.user.nickname %></span>
+          <span>質問者 : <%= @question.user.nickname %></span>
         </div>
-        <p><%= @question.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
+        <p>投稿日時 : <%= @question.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
       </div>
       <div class="question-info">
         <div class="question-content">
