@@ -6,10 +6,10 @@ class QuestionsController < ApplicationController
     if params[:category_id].present?
       @category = Category.find(params[:category_id])
       @search = @category.questions.ransack(params[:q])
-      @questions = @search.result.page(params[:page]).per(7)
+      @questions = @search.result.order(created_at: :desc).page(params[:page]).per(7)
     else
       @search = Question.ransack(params[:q])
-      @all_questions = @search.result.page(params[:page]).per(7)
+      @all_questions = @search.result.order(created_at: :desc).page(params[:page]).per(7)
     end
   end
 

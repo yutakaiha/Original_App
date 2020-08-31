@@ -20,14 +20,14 @@
     </div>
   </div>
   <div class="row qanda-main">
-    <div class="col-7">
+    <div class="col-md-7">
       <table class="table table-hover">
         <thead id="questions" class ="question-title">
           <tr>
             <% if @category.present? %>
-              <th scope="col"><%= @category.title %></th>
+              <th colspan="2"><%= @category.title %></th>
             <% else %>
-              <th scope="colspan-2">全ての質問・相談一覧（新着順）</th>
+              <th colspan="2">全ての質問・相談一覧（新着順）</th>
             <% end %>
           </tr>
         </thead>
@@ -45,7 +45,7 @@
         </div>
       <% end %>
     </div>
-    <div class="col-5 qanda-sidebar">
+    <div class="col-md-5 qanda-sidebar">
       <% if @category.present? %>
         <div class="ranking-by-category">
           <%= render 'ranking_by_category' %>

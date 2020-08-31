@@ -5,9 +5,11 @@
         Q. <%= i %> <%=link_to question.title, question %>
         <span class="post-day">(投稿日 ： <%= question.created_at.strftime("%Y/%m/%d") %>)</span>
       </th>
-      <% if correct_user?(question) %>
-        <td><%= link_to '削除', question, method: :delete, data: {confirm: "本当に削除しますか？"} %></td>
-      <% end %>
+      <td>
+        <% if correct_user?(question) %>
+          <%= link_to '削除', question, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-info btn-sm" %>
+        <% end %>
+      </td>
     </tr>
   <% end %>
 <% else %>
@@ -17,9 +19,11 @@
         Q. <%= i %> <%= link_to question.title, question %>
         <span class="post-day">(投稿日 ： <%= question.created_at.strftime("%Y/%m/%d") %>)</span>
       </th>
-      <% if correct_user?(question) %>
-        <td><%= link_to '削除', question, method: :delete, data: {confirm: "本当に削除しますか？"} %></td>
-      <% end %>
+      <td>
+        <% if correct_user?(question) %>
+          <%= link_to '削除', question, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-info btn-sm" %>
+        <% end %>
+      </td>
     </tr>
   <% end %> 
 <% end %>
