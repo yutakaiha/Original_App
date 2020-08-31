@@ -11,7 +11,12 @@
         <div class="question-content">
           <%= simple_format answer.content %>
         </div>
-      </div>  
+      </div> 
+      <div class="best-answer-registration text-right">
+        <span>
+          <%= link_to 'ベストアンサーに登録する', question_answer_best_answer_path, method: :post, data: {confirm: "本当にベストアンサーとして登録しますか？"}  %>
+        </span>
+      </div>
     </div>  
   <% end %>
   <div class="pagination">

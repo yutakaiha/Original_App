@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   resources :categories, only: [:index, :show]
   resources :events, only: :show
   resources :questions do
-    resources :answers, only: [:new, :create, :destory]
+    resources :answers, only: [:new, :create, :destory] do
+      resource :best_answer, only: [:show, :create, :destroy]
+    end
   end
 
 
