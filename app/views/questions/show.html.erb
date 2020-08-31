@@ -27,33 +27,42 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-5 ml-4 mt-3">
+  <div class="row mt-3">
+    <div class="col-md-8 ml-4 mt-6 button-area">
       <% if correct_user?(@question) %>
-        <td><%= link_to '投稿を削除する', @question, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-primary" %></td>
+        <td>
+          <%= link_to '投稿を削除する', @question, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-primary" %>
+        </td>
       <% end %>
-    </div>
-  </div>
-  <div class="row best-answer-container ml-4">
-    <div class="col-md-7 border border-warning best-answer-bg">
-      <div class="best-answer-title">
-        <h3>★ベストアンサー★</h3>
+      <div class="new-answer-link ml-3">
+        <%= link_to '回答・アドバイスを投稿する', new_question_answer_path(@question), class: "btn btn-primary" %>
       </div>
-      <%= render 'best_answer_content' %>
-    </div>
-    <div class="col-md-5 sidebar">
-      <%= render 'ranking_by_all' %>
     </div>
   </div>
+  <% if @question.best_answer_id %>
+    <div class="row best-answer-container ml-4">
+      <div class="col-md-7 border border-warning best-answer-bg">
+        <div class="best-answer-title">
+          <h3>★ベストアンサー★</h3>
+        </div>
+        <%= render 'best_answer_content' %>
+      </div>
+      <div class="col-md-5 sidebar">
+        <%= render 'ranking_by_all' %>
+      </div>
+    </div>
+  <% end %>
 
-  <div class="row ml-4 ">
+  <div id="normal-answer" class="row ml-4 mt-5">
     <div class="col-md-7 answer-except-best-answer">
       <h3 id="all-answers" class="mb-3">○ベストアンサー以外の回答○</h3>
       <%= render 'all_answers_of_question' %>
     </div>
-    <div class="col-md-5">
-      
-    </div>
+    <% unless @question.best_answer_id %>
+      <div class="col-md-5">
+        <%= render 'ranking_by_all' %>
+      </div>
+    <% end %>
   </div>
 </div>
   

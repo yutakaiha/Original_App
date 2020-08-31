@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   resources :subsidies
   resources :categories, only: [:index, :show]
   resources :events, only: :show
-  resources :questions
+  resources :questions do
+    resources :answers, only: [:new, :create, :destory]
+  end
 
 
 end

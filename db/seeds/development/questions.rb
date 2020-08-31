@@ -1,10 +1,7 @@
-BESTANSWER = (1..50).to_a
-
 0.upto(99) do |i|
   Question.create!(
     title: Faker::Lorem.sentence,
     content: Faker::Lorem.paragraph(sentence_count: 10),
-    best_answer_id: BESTANSWER.sample,
     created_at: 150.days.ago.advance(days: rand(50)),
     category_id: CATEGORYID[i % 6],
     user_id: rand(1..99),

@@ -313,6 +313,7 @@ section {
   background-color: #eeffff;
 }
 
+//質問詳細ページ
 .question-main {
   border: 2px solid $Main;
 
@@ -321,6 +322,13 @@ section {
     justify-content: space-between;
   }
 }
+
+.answer-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+
 
 .post-day {
   display: inline-block;
@@ -350,7 +358,8 @@ section {
   background-color: #eeffff;
 }
 
-.question-new-content {
+.question-new-content,
+.answer-new-content {
   max-width: 100%;
   position: absolute;
   top: 50%;
@@ -362,6 +371,13 @@ section {
   padding: 5px 0;
   font-size: 90%;
 }
+
+.button-area {
+  display: flex;
+  justify-content: flex-start;
+}
+
+
 
 
 

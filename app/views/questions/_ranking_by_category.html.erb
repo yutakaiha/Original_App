@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    <% ranking_of_category(@category).each.with_index(1) do |question, i| %>
+    <% ranking_by_category(@category).each.with_index(1) do |question, i| %>
       <tr>
         <td>
           <%= i %>

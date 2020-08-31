@@ -1,0 +1,18 @@
+<div class="container">
+  <p class="text-right pr-5 mr-5"><%= link_to '質問詳細ページへ戻る', @question, class: "btn btn-primary" %></p>
+  <div class="row mt-5 answer-new-content">
+    <div class="col-md-8 new-page-title ml-3">
+        <h3>回答を投稿して情報共有しよう！</h3>
+      </div>
+    <div class="col-sm-6 col-md-8 col-lg-10">
+      <%= form_with model: @answer, url: question_answers_path, local: true do |f| %>
+        <div class="content-form my-3">
+          <p class="mb-0"><%= f.label :content, "回答・アドバイス" %></p>
+          <%= f.text_area :content, class: "form-control", placeholder: "解決案やアドバイスなどを記載してください", size: "60x10" %>
+        </div>
+        <p><%= f.submit "投稿する", class: "btn btn-info form-control" %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
+
