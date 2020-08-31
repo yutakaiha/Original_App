@@ -4,7 +4,7 @@ puts 'Create answers...'
   Answer.create!(
     content: Faker::Lorem.paragraph(sentence_count: 14),
     user_id: rand(1..99),
-    question_id: rand(1..3)
+    question_id: rand(1..49)
   )
 end
 
