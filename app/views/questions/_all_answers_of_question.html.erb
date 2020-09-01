@@ -1,3 +1,7 @@
+<% if @question.best_answer_id %>
+  <% @answers = except_best_answer(@answers, @question) %>
+<% end %>
+
 <% if @answers.any? %>
   <% @answers.each do |answer| %>
     <div class="border border-info py-4 answer-main">

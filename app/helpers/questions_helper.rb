@@ -15,4 +15,8 @@ module QuestionsHelper
     user = User.find_by(id: question.user_id)
     current_user == user
   end
+
+  def except_best_answer(answers, question)
+    answers.where.not("id = ?", question.best_answer_id)
+  end
 end
