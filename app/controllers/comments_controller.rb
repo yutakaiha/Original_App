@@ -19,7 +19,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-
+    @comment.destroy
+    redirect_to question_path(@question, anchor: "commnet-container"), notice: "コメントを削除しました"
   end 
 
   private
@@ -35,7 +36,7 @@ class CommentsController < ApplicationController
 
   def correct_user
     @comment = Comment.find(params[:id])
-    unless current_user.id == @commnet.user_id
+    unless current_user.id == @comment.user_id
       redirect_to root_path, alert: "この処理は無効です！"
     end
   end

@@ -75,6 +75,13 @@
                 <%= simple_format comment.content %>
               </div>
             </div> 
+            <div class="comment-destroy-link">
+              <p class="text-right">
+                <%= link_to 'コメント削除', question_answer_comment_path(@question, answer, comment), method: :delete,
+                  class: "btn btn-danger btn-sm mr-2", data: {confirm: "本当にコメントを削除しますか？"}
+                %>
+              </p>
+            </div>
           </div>
         <% end %>
       <% end %>
