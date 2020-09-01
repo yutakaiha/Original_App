@@ -28,4 +28,19 @@ module QuestionsHelper
   def favorites_counts(answer)
     answer.favorites.where(answer_id: answer.id).count
   end
+
+  # コメント機能
+  def set_comments(answer)
+    answer.comments.order(created_at: :desc)
+  end
+
+  def commenter_name(comment)
+    user_id = comment.user_id
+    User.find(user_id).nickname
+  end
+
+  def comment_date(comment)
+    comment.created_at.strftime("%Y/%m/%d %H:%M:%S")
+  end
+
 end

@@ -1,0 +1,19 @@
+<%# 質問作成ページとレイアウト同じためクラス名をあえてquestionから変えていません %>
+<div class="container">
+  <div class="row mt-5 question-new-content">
+    <div class="col-md-8new-page-title ml-3">
+        <h3>コメントを投稿しよう！</h3>
+      </div>
+    <div class="col-sm-6 col-md-8 col-lg-10">
+      <%= form_with model: [@question, @answer, @comment], local: true do |f| %>
+        <div class="content-form my-3">
+          <p class="mb-0"><%= f.label :content, "コメント内容" %></p>
+          <%= f.text_area :content, class: "form-control", placeholder: "コメントを記載してください", size: "60x10" %>
+        </div>
+        <p><%= f.submit "投稿する", class: "btn btn-info form-control" %></p>
+      <% end %>
+      <p><%= link_to '詳細ページへ戻る', :questions, class: "btn btn-info w-100" %></p>
+    </div>
+  </div>
+</div>
+

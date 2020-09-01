@@ -46,3 +46,8 @@
     </ul>
   </div>
 </nav>
+<% if user_signed_in? %>
+  <div class="session_user">
+    <p><i class="fas fa-user-circle fa-fw fa-lg "></i><span><%= current_user.nickname %></span></p>
+  </div>
+<% end %>

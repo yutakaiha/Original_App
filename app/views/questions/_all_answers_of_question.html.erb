@@ -40,15 +40,44 @@
           </div>
         <% end %>
       <% end %>
-      <% if current_user.id == answer.user_id %>
-        <div class="destroy-answer text-right mr-3">
+      <div class="link-area">
+        <% if current_user.id == answer.user_id %>
+          <div class="destroy-answer text-right mr-3">
+            <span>
+              <%= link_to '回答を削除', question_answer_path(@question, answer), method: :delete,
+                  date: {confirm: "本当にこの回答を削除しますか？"}, class: "btn btn-danger btn-sm"
+              %>
+            </span>
+          </div>
+        <% end %>
+        <%# コメント新規作成リンクの実装中______________________________________ %>
+        <div class="new-comment-link text-right mr-3">
           <span>
-            <%= link_to '回答を削除', question_answer_path(@question, answer), method: :delete,
-                date: {confirm: "本当にこの回答を削除しますか？"}, class: "btn btn-danger btn-sm"
-            %>
+            <%= link_to 'コメント投稿', new_question_answer_comment_path(@question, answer), class: "btn btn-success btn-sm"%>
           </span>
         </div>
+      </div>
+      <%# コメント新規作成リンクの実装中______________________________________ %>
+      <%# コメント蘭の実装中______________________________________ %>
+      <% @comments = set_comments(answer) %>
+      <% if @comments.any? %>
+        <% @comments.each do |comment| %>
+          <div id="commnet-container" class="border border-success mx-2 mt-5 rounded">
+            <div class="commenter-info mx-2 mt-2">
+              <div class="commenter-image">
+                  <span><%= commenter_name(comment) %></span>
+              </div>  
+              <p><%= comment_date(comment) %></p>
+            </div>
+            <div class="commetn-info">
+              <div class="commnent-content">
+                <%= simple_format comment.content %>
+              </div>
+            </div> 
+          </div>
+        <% end %>
       <% end %>
+      <%# コメント蘭の実装中______________________________________ %>
     </div>  
   <% end %>
   <div class="pagination">
