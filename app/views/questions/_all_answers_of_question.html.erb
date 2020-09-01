@@ -48,7 +48,30 @@
             %>
           </span>
         </div>
+      <%# コメント新規作成リンクの実装中______________________________________ %>
+      <% else %>
+        <div class="new-comment-link text-right mr-3">
+          <span>
+            <%= link_to 'コメント投稿', new_question_answer_comments_path(@question, answer), class: "btn btn-success btn-sm"%>
+          </span>
+        </div>
       <% end %>
+      <%# コメント新規作成リンクの実装中______________________________________ %>
+      <%# コメント蘭の実装中______________________________________ %>
+      <div class="commnet-container border border-success mx-2 mt-5 rounded">
+        <div class="commenter-info mx-2 mt-2">
+          <div class="commenter-image">
+              <span>コメント : <%= answer_name(answer) %></span>
+          </div>  
+          <p><%= answer.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
+        </div>
+        <div class="commetn-info">
+          <div class="commnent-content">
+            <%# <%= simple_format commnet.content %> 
+          </div>
+        </div> 
+      </div>
+      <%# コメント蘭の実装中______________________________________ %>
     </div>  
   <% end %>
   <div class="pagination">
