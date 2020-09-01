@@ -34,9 +34,11 @@
           <%= link_to '投稿を削除する', @question, method: :delete, data: {confirm: "本当に削除しますか？"}, class: "btn btn-primary" %>
         </td>
       <% end %>
-      <div class="new-answer-link ml-3">
-        <%= link_to '回答・アドバイスを投稿する', new_question_answer_path(@question), class: "btn btn-primary" %>
-      </div>
+      <% unless correct_user?(@question) %>
+        <div class="new-answer-link ml-3">
+          <%= link_to '回答・アドバイスを投稿する', new_question_answer_path(@question), class: "btn btn-primary" %>
+        </div>
+      <% end %>
     </div>
   </div>
   <% if @question.best_answer_id %>
