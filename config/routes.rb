@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :questions do
     resources :answers, only: [:new, :create, :destroy] do
       resource :best_answer, only: [:show, :create, :destroy]
+      resource :favorite, only: [:create, :destroy]
     end
   end
 
