@@ -1,6 +1,7 @@
 class AnswersController < ApplicationController
   before_action :authenticate_user!
   before_action :associate_question
+  before_action :judge_user
 
   def new
     @answer = @question.answers.build(user_id: current_user.id)
@@ -25,5 +26,12 @@ class AnswersController < ApplicationController
 
   def associate_question
     @question = Question.find(params[:question_id])
+  end
+
+  def judge_user
+    @user = User.find_by(id: @question.user_id)
+    if current_user == @user
+      redirect_to questions_path, alert: "自身の質問に対しての処理は無効です！"
+    end
   end
 end
