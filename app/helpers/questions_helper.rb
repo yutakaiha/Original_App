@@ -28,4 +28,9 @@ module QuestionsHelper
   def favorites_counts(answer)
     answer.favorites.where(answer_id: answer.id).count
   end
+
+  # コメント機能
+  def commenter_name(comment)
+    User.find(comment.user_id).nickname
+  end
 end
