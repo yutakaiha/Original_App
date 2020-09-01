@@ -46,6 +46,11 @@
           <h3>★ベストアンサー★</h3>
         </div>
         <%= render 'best_answer_content' %>
+        <div class="text-right">
+            <%= link_to 'ベストアンサーを解除する', question_answer_best_answer_path(question_id: @question.id, answer_id: @question.best_answer_id),
+              method: :delete, data: {confirm: "本当にベストアンサー登録を解除しますか？"}, class: "btn btn-danger btn-sm"
+            %>
+        </div>
       </div>
       <div class="col-md-5 sidebar">
         <%= render 'ranking_by_all' %>
