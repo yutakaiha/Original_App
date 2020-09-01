@@ -19,4 +19,13 @@ module QuestionsHelper
   def except_best_answer(answers, question)
     answers.where.not("id = ?", question.best_answer_id)
   end
+
+  # いいね機能
+  def allready_favorite?(answer)
+    answer.favorites.exists?(user_id: current_user.id)
+  end
+
+  def favorites_counts(answer)
+    answer.favorites.where(answer_id: answer.id).count
+  end
 end
