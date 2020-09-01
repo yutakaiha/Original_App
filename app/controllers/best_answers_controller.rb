@@ -6,10 +6,9 @@ class BestAnswersController < ApplicationController
   end
 
   def create
-
-  end
-
-  def destroy
-    
+    @answer = Answer.find(params[:answer_id])
+    @answer.question.update!(best_answer_id: @answer.id)
+    @question = Question.find(params[:question_id])
+    redirect_to @question, notice: "ベストアンサーとして登録しました！"
   end
 end

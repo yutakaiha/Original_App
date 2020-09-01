@@ -14,7 +14,9 @@
       </div> 
       <div class="best-answer-registration text-right">
         <span>
-          <%= link_to 'ベストアンサーに登録する', question_answer_best_answer_path, method: :post, data: {confirm: "本当にベストアンサーとして登録しますか？"}  %>
+          <%= link_to 'ベストアンサーに登録する', question_answer_best_answer_path(@question, answer), 
+              method: :post, data: {confirm: "本当にベストアンサーとして登録しますか？"} , class: "btn btn-primary btn-sm" 
+          %>
         </span>
       </div>
     </div>  
