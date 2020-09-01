@@ -7,9 +7,9 @@
     <div class="border border-info py-4 answer-main">
       <div class="answer-info">
         <div class="answer-image">
-            <span><%= answer_name(answer) %></span>
+            <span>回答者 : <%= answer_name(answer) %></span>
         </div>  
-        <p><%= answer.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
+        <p>回答日時 : <%= answer.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
       </div>
       <div class="question-info">
         <div class="question-content">
@@ -17,10 +17,21 @@
         </div>
       </div> 
       <% unless @question.best_answer_id %>
-        <div class="best-answer-registration text-right">
+        <% if correct_user?(@question) %>
+          <div class="best-answer-registration text-right">
+            <span>
+              <%= link_to 'ベストアンサーに登録', question_answer_best_answer_path(@question, answer), 
+                  method: :post, data: {confirm: "本当にベストアンサーとして登録しますか？"} , class: "btn btn-primary btn-sm" 
+              %>
+            </span>
+          </div>
+        <% end %>
+      <% end %>
+      <% if current_user.id == answer.user_id %>
+        <div class="destroy-answer text-right mr-3">
           <span>
-            <%= link_to 'ベストアンサーに登録する', question_answer_best_answer_path(@question, answer), 
-                method: :post, data: {confirm: "本当にベストアンサーとして登録しますか？"} , class: "btn btn-primary btn-sm" 
+            <%= link_to '回答を削除', question_answer_path(@question, answer), method: :delete,
+                date: {confirm: "本当にこの回答を削除しますか？"}, class: "btn btn-danger btn-sm"
             %>
           </span>
         </div>

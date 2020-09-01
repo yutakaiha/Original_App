@@ -14,7 +14,7 @@ class BestAnswersController < ApplicationController
 
   def destroy
     @question.update!(best_answer_id: nil)
-    redirect_to @question, notice: "ベストアンサー登録を解除しました！"
+    redirect_to @question, notice: "ベストアンサーの登録を解除しました！"
   end
 
   private
