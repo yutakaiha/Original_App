@@ -59,6 +59,7 @@
       </div>
       <%# コメント新規作成リンクの実装中______________________________________ %>
       <%# コメント蘭の実装中______________________________________ %>
+      <% @comments = set_comments(answer) %>
       <% if @comments.any? %>
         <% @comments.each do |comment| %>
           <div id="commnet-container" class="border border-success mx-2 mt-5 rounded">
@@ -66,7 +67,7 @@
               <div class="commenter-image">
                   <span><%= commenter_name(comment) %></span>
               </div>  
-              <p><%= comment.created_at.strftime("%Y/%m/%d %H:%M:%S") %></p>
+              <p><%= comment_date(comment) %></p>
             </div>
             <div class="commetn-info">
               <div class="commnent-content">

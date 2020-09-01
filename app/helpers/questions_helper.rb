@@ -30,7 +30,17 @@ module QuestionsHelper
   end
 
   # コメント機能
-  def commenter_name(comment)
-    User.find(comment.user_id).nickname
+  def set_comments(answer)
+    answer.comments.order(created_at: :desc)
   end
+
+  def commenter_name(comment)
+    user_id = comment.user_id
+    User.find(user_id).nickname
+  end
+
+  def comment_date(comment)
+    comment.created_at.strftime("%Y/%m/%d %H:%M:%S")
+  end
+
 end

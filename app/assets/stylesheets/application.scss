@@ -52,6 +52,17 @@ body {
   }
 }
 
+// ヘッダー、ログイン中のユーザー表示
+.session_user {
+  position: absolute;
+  top: 60px;
+  left: 85%;
+
+  & p {
+    font-size: large;
+  }
+}
+
 .top-wrapper {
   width: 100%;
   height: 450px;

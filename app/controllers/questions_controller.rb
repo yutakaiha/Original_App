@@ -1,7 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :authenticate_user!
   before_action :correct_user?, only: :destroy
-  before_action :set_comments, only: :show
 
   def index
     if params[:category_id].present?
@@ -28,7 +27,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     impressionist(@question, nil, :unique => [:session_hash])
     @answers = @question.answers.order(created_at: :desc).page(params[:page]).per(3)
-    @best_answer = @answers.best_answer(@question)
+    @best_answer = @answers.best_answer(@question) if @question.best_answer_id
   end
 
   def destroy
@@ -47,9 +46,5 @@ class QuestionsController < ApplicationController
     @user = User.find_by(id: @question.user_id)
     redirect_to questions_path unless current_user == @user
     @question
-  end
-
-  def set_comments
-    @comments = Comment.order(created_at: :desc)
   end
 end
