@@ -1,5 +1,4 @@
 <div class="container">
-  <p class="text-right pr-5 mr-5"><%= link_to '質問詳細ページへ戻る', @question, class: "btn btn-primary" %></p>
   <div class="row mt-5 answer-new-content">
     <div class="col-md-8 new-page-title ml-3">
         <h3>回答を投稿して情報共有しよう！</h3>
@@ -12,6 +11,7 @@
         </div>
         <p><%= f.submit "投稿する", class: "btn btn-info form-control" %></p>
       <% end %>
+      <p><%= link_to '質問詳細ページへ戻る', @question, class: "btn btn-info w-100" %></p>
     </div>
   </div>
 </div>
