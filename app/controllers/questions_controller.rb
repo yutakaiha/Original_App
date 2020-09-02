@@ -15,12 +15,15 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
-    @categories = Category.all
   end
   
   def create 
-    @questinon = current_user.questions.create!(question_params)
-    redirect_to :questions, notice: "質問を投稿しました！"
+    @question = current_user.questions.build(question_params)
+    if @question.save
+      redirect_to :questions, notice: "質問を投稿しました！"
+    else
+      render "new"
+    end
   end
 
   def show

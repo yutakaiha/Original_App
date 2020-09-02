@@ -298,7 +298,7 @@ section {
   }
 }
 
-.alert-warning {
+.alert-danger {
   margin-top: 40px;
   padding-bottom: 0px;
 }
@@ -402,6 +402,19 @@ section {
 .link-area {
   display: flex;
   justify-content: flex-end;
+}
+
+.field-error {
+  color: #262626;
+  background: #FFEBE8;
+  text-align: left;
+  border: 2px solid #990000;
+  padding: 12px;
+  font-weight: 850;
+}
+
+.field_with_errors {
+  background: #FFEBE8;
 }
 
 

@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row qanda-header">
-    <div class="col-md-12 text-right qanda-search mt-3">
+    <div class="col-md-12 text-right qanda-search mt-5">
       <%= search_form_for @search, url: questions_path(anchor: "questions") do |f| %>
         <%= f.label :title_cont, "Q&A検索" %>
         <%= f.search_field :title_cont, placeholder: "キーワードで探す" %>

@@ -5,6 +5,7 @@
       </div>
     <div class="col-sm-6 col-md-8 col-lg-10">
       <%= form_with model: @answer, url: question_answers_path, local: true do |f| %>
+        <%= render 'layouts/error_form', model: @answer %>
         <div class="content-form my-3">
           <p class="mb-0"><%= f.label :content, "回答・アドバイス" %></p>
           <%= f.text_area :content, class: "form-control", placeholder: "解決案やアドバイスなどを記載してください", size: "60x10" %>
