@@ -18,7 +18,9 @@ body {
 }
 
 .base-container {
-  position: relative;
+  min-width: 1280px;
+  margin: 0 auto;
+
 }
 
 //レイアウト共通化
@@ -225,7 +227,10 @@ section {
   padding-left: 40px;
 }
 
-//ログイン画面とアカウント編集画面のレイアウト
+//ログイン画面
+
+
+//アカウント編集画面のレイアウト
 .common-container {
   max-width: 100%;
   margin: 0 auto;
@@ -280,6 +285,7 @@ section {
     & .actions {
       margin-bottom: 20px;
     }
+
   }
 }
 
