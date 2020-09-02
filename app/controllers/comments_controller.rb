@@ -10,10 +10,10 @@ class CommentsController < ApplicationController
 
   def create
     @comment.assign_attributes(comment_params)
-    if @comment.save!
+    if @comment.save
       redirect_to question_path(@question, anchor: "normal-answer"), notice: "コメントを投稿しました！"
     else
-      flash_now[:alert] = "コメントの投稿に失敗しました！"
+      flash.now[:error] = "コメントの投稿に失敗しました！"
       render "new"
     end
   end
