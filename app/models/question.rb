@@ -6,8 +6,6 @@ class Question < ApplicationRecord
   with_options presence: true do
     validates :title
     validates :content, length: {maximum: 1000, too_long: "最大1000文字まで扱えます"}
-    validates :user_id
-    validates :category_id
   end
 
 

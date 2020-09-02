@@ -11,10 +11,9 @@ class AnswersController < ApplicationController
   def create
     @answer = @question.answers.build(user_id: current_user.id)
     @answer.assign_attributes(answer_params)
-    if @answer.save!
+    if @answer.save
       redirect_to question_path(@question, anchor: "normal-answer"), notice: "回答を投稿しました！"
     else
-      flash_now[:alert] = "回答の投稿に失敗しました！"
       render "new"
     end
   end
