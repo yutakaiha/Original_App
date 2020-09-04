@@ -29,8 +29,7 @@ RSpec.describe User, type: :model do
     end
 
     context "passwordに関するバリデーション" do
-      
-
+    
       it "passwordが空欄の場合User登録できない" do
         expect(build(:user, password: "")).to_not be_valid 
       end
@@ -43,9 +42,7 @@ RSpec.describe User, type: :model do
       it "password_confirmationとpasswrodが完全一致していない場合登録不可" do
         expect(build(:user, password_confirmation: "fugafuga")).to_not be_valid  
       end
-      
     end
-    
     
   end
 end
