@@ -35,6 +35,9 @@ gem "factory_bot_rails"
 gem 'activeadmin'
 gem "devise"
 gem "devise-i18n"
+gem "omniauth"
+gem 'omniauth-facebook'
+gem "omniauth-twitter"
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
