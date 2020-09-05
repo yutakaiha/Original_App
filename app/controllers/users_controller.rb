@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @total_questions = @questions.present? ? @questions.count : 0
     @total_answers = @answers.present? ? @answers.count : 0
     # ここから修正
-    @total_best_answers = Question.where("best_answer_id > ?", ＃＃＃).count 
+    @total_best_answers = Question.where("best_answer_id = ?", ＃＃＃).count 
   end
 
   private
