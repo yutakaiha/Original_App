@@ -2,10 +2,17 @@
   <h3>プロフィール</h3>
 </div>
 <div class="container">
-  <div class="row">
+  <div class="row ml-3 mt-5">
     <div class="col-md-5">
-      <div class="profile-image">
-      
+      <div id="profile-image">
+        <% if @user.image.attached?  %>
+          <%= image_tag @user.resize_image %>
+        <% else %>
+          <div id="no-image">
+            <p>No＿Image</p> 
+          </div>
+        <% end %>
+        
       </div>
       <div class="grade">
       
@@ -20,5 +27,4 @@
     </div>
   </div>
 </div>
-
 
