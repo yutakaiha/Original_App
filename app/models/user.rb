@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :favorite_answers, through: :favorites, source: :answer
   has_many :comments, dependent: :destroy
   has_many :commented_answers, through: :comments, source: :answer
+  has_one_attached :image
 
   validates :nickname, presence: true
 
@@ -13,3 +14,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
 end
+
+
