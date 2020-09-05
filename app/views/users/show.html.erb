@@ -3,10 +3,13 @@
 </div>
 <div class="container">
   <div class="row ml-3 mt-5">
-    <div class="col-md-5">
+    <div class="col-md-4 border border-a  aqua pl-4 pt-3">
       <div id="profile-image">
         <% if @user.image.attached?  %>
-          <%= image_tag @user.resize_image %>
+          <div class="image">
+            <%= image_tag @user.resize_image %>
+          </div>
+          <p><%= @user.nickname %></p>
         <% else %>
           <div id="no-image">
             <p>No＿Image</p> 
@@ -14,12 +17,12 @@
         <% end %>
         
       </div>
-      <div class="grade">
-      
+      <div class="grade mr-2 mb-3 border border-aqua">
+        <%= render 'grade' %>
       </div>
 
     </div>
-    <div class="col-md-7">
+    <div class="col-md-7 ml-4">
       <%= render 'profile' %>
       <div class="grade-chart">
       

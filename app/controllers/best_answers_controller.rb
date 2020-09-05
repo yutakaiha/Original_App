@@ -28,6 +28,6 @@ class BestAnswersController < ApplicationController
     @user = User.find_by(id: @question.user_id)
     unless current_user == @user
       redirect_to questions_path, alert: "この操作は無効です！"
-    end
+    end 
   end
 end
