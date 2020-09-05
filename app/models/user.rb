@@ -12,6 +12,10 @@ class User < ApplicationRecord
                     message: "画像ファイル形式は「jpg（jpeg）, gif, png」のみになります。"},
             size: {less_than: 6.megabytes, message: "ファイルサイズは６MB未満でなければなりません。"}
 
+  def resize_image
+    image.variant(resize_to_limit: [300, 300])
+  end
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and 
   devise :database_authenticatable, :registerable,
