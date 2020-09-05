@@ -8,6 +8,9 @@ class User < ApplicationRecord
   has_one_attached :image
 
   validates :nickname, presence: true
+  validates :image, content_type: {in: %w[image/jpg image/jpeg image/gif image/png],
+                    message: "画像ファイル形式は「jpg（jpeg）, gif, png」のみになります。"},
+            size: {less_than: 6.megabytes, message: "ファイルサイズは６MB未満でなければなりません。"}
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and 
