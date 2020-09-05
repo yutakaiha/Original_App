@@ -8,12 +8,12 @@ class BestAnswersController < ApplicationController
   end
 
   def create
-    @answer.question.update!(best_answer_id: @answer.id)
+    @answer.question.update!(best_answer_id: @answer.id, best_user_id: @answer.user_id)
     redirect_to @question, notice: "ベストアンサーとして登録しました！"
   end
 
   def destroy
-    @question.update!(best_answer_id: nil)
+    @question.update!(best_answer_id: nil, best_user_id: nil)
     redirect_to @question, notice: "ベストアンサーの登録を解除しました！"
   end
 
@@ -28,6 +28,6 @@ class BestAnswersController < ApplicationController
     @user = User.find_by(id: @question.user_id)
     unless current_user == @user
       redirect_to questions_path, alert: "この操作は無効です！"
-    end
+    end 
   end
 end

@@ -1,0 +1,31 @@
+<div class="grade-table">
+  <table class="table table-sm">
+  <thead>
+    <tr>
+      <th colspan="2">My_Q&A詳細</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">質問数</th>
+      <td><%= @total_questions %>回</td>
+    </tr>
+    <tr>
+      <th scope="row">回答数</th>
+      <td><%= @total_answers %>回</td>
+    </tr>
+    <tr>
+      <th scope="row">ベストアンサー数</th>
+      <td><%= @total_best_answers %>回</td>
+    </tr>
+    <tr>
+      <th scope="row">ベストアンサー率</th>
+      <td><%=  best_answer_rate(@total_best_answers, @total_answers) %>%</td>
+    </tr>
+    <tr>
+      <th scope="row">質問解決率</th>
+      <td>Larry the Bird</td>
+    </tr>
+  </tbody>
+</table>
+</div>
