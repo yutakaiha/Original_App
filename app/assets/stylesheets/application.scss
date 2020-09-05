@@ -422,14 +422,13 @@ section {
   background: #FFEBE8;
 }
 
-.profile-image {
 
-  & .no-image {
-    width: 100px;
-    height: 100px;
-    background-color: #cbe2e7;
-    color: gray;
-  }
+
+#no-image {
+  width: 250px;
+  height: 230px;
+  background-color: #cbe2e7;
+  color: gray;
 }
 
 // .profile-image {

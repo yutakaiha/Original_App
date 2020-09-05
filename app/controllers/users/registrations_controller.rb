@@ -22,6 +22,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # PUT /resource
   def update
     super
+    resource = current_user
     if account_update_params[:image].present?
       resource.image.attach(account_update_params[:image])
     end
