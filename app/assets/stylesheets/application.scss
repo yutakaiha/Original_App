@@ -422,6 +422,16 @@ section {
   background: #FFEBE8;
 }
 
+.profile-image {
+
+  & .no-image {
+    width: 100px;
+    height: 100px;
+    background-color: #cbe2e7;
+    color: gray;
+  }
+}
+
 // .profile-image {
 //   text-align: left;
 //   padding-left: 40px;
