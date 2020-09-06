@@ -14,12 +14,24 @@
       <td><%= @user.nickname %></td>
     </tr>
     <tr>
-      <th scope="row">年齢</th>
-      <td>＃＃＃</td>
+      <th scope="row">誕生日</th>
+      <td>
+        <% if @user.birthday%>
+          <%= @user.birthday&.strftime("%Y年%M月%d日") %>
+        <% else %>
+          <%= "未登録" %>
+        <% end %>
+      </td>
     </tr>
     <tr>
       <th scope="row">性別</th>
-      <td>＃＃＃</td>
+      <td>
+        <% if @user.sex %>
+          <%= @user.sex %>
+        <% else %>
+          <%= "未登録" %>
+        <% end %>
+      </td>
     </tr>
   </tbody>
 </table>
