@@ -21,6 +21,11 @@ class User < ApplicationRecord
     image.variant(resize_to_limit: [300, 300])
   end
 
+  def self.transform_chart_data(best_answers, total_answers)
+    other_answers = total_answers - best_answers
+    data= {"ベストアンサー" => best_answers, "その他のアンサー" => other_answers}
+  end
+
 end
 
 

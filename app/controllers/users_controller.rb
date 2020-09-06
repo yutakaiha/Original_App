@@ -8,6 +8,7 @@ class UsersController < ApplicationController
     @total_answers = @answers.present? ? @answers.count : 0
     # ここから修正
     @total_best_answers = Question.where("best_user_id = ?", @user.id).count 
+    @chart_data = User.transform_chart_data(@total_best_answers, @total_answers)
   end
 
   private
