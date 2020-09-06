@@ -17,6 +17,19 @@
           <%= f.text_field :nickname, autofocus: true, autocomplete: "nickname" %>
         </div>
 
+        <div class="field border border-blue my-4">
+          <%= f.label :birthday %><br />
+          <%= f.date_select :birthday, start_year: 1940, end_year: Time.current.year, use_month_numbers: true, class: "form-control" %>
+        </div>
+
+        <div class="field border border-blue">
+          <div class="radio-box w-75">
+            <%= f.label :sex %><br />
+            <%= f.radio_button :sex, "男" %><%= f.label :sex_1 %>
+            <%= f.radio_button :sex, "女" %><%= f.label :sex_2 %>
+          </div>
+        </div>
+
         <div class="field">
           <%= f.label :email %><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
