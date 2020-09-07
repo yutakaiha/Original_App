@@ -18,7 +18,7 @@ body {
 }
 
 .base-container {
-  min-width: 1280px;
+  // max-width: 1500px;
   margin: 0 auto;
 }
 
@@ -64,22 +64,25 @@ body {
   }
 }
 
-.top-wrapper {
+.top-container {
   width: 100%;
-  height: 450px;
-  position: relative;
+  padding-top: 49px;
+
+  & .image-area {
+    max-width: 100vw;
+    height: 450px;
+    background-image: url("top.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+  }
 }
 
-#home {
-  background-image: url("top.png");
-  height: 100%;
-}
 
-.big-bg {
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
+#home {}
+
 
 .home-content {
   text-align: center;
@@ -174,18 +177,12 @@ section {
   width: 100%;
 }
 
-.container {
-  position: absolute;
-  top: 40px;
-  margin-top: 40px;
-
-  & .search-container {
-    margin-top: 17px;
-  }
+.search-container {
+  margin-top: 120px;
 
   & h1 {
     font-size: 2rem;
-    margin-bottom: 10px;
+    margin-bottom: 17px;
     border-bottom: 3px solid $Main;
   }
 }
@@ -201,26 +198,34 @@ section {
 
 //categories/index.html.erb
 .categories-wrapper {
-  margin-top: 40px;
+  margin-top: 120px;
   text-align: center;
 
   @include card-style();
 }
 
-.bg-image {
-  height: 80%;
-  margin: 0 auto;
+.event-container {
+  margin-top: 120px;
 
-  & .events-image {
-    width: 80%;
-    height: 60%;
+  & .image {
+    & .bg-image {
+      height: 80%;
+      margin: 0 auto;
+
+      & .events-image {
+        width: 80%;
+        height: 60%;
+      }
+    }
   }
 }
+
+
 
 .event-show {
   margin: 0 auto;
   margin-bottom: 25px;
-  background-color: $Main;
+  border-bottom: 3px solid $Main;
   padding-left: 40px;
 }
 
@@ -281,6 +286,22 @@ section {
   }
 }
 
+// #radio-content {
+//   // position: relative;
+
+//   & #radio {
+//     border: 2px solid blue;
+//     width: 40%;
+//     // padding: 0 30px;
+//     // display: flex;
+//     // position: absolute;
+//     // top: 2px;
+//     // left: 50%;
+//   }
+// }
+
+
+
 .alert-success {
   margin-top: 40px;
   padding-bottom: 0px;
@@ -318,6 +339,10 @@ section {
 }
 
 //質問一覧ページのレイアウト
+.qanda-header {
+  margin-top: 75px;
+}
+
 .select-category {
   margin-top: 40px;
   @include card-style();
@@ -411,6 +436,11 @@ section {
   background: #ffebe8;
 }
 
+//マイページ
+.profile-content {
+  margin-top: 120px;
+}
+
 #no-image {
   width: 300px;
   height: 230px;
@@ -432,6 +462,7 @@ section {
   .actions input {
     width: 60%;
   }
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
@@ -446,3 +477,22 @@ section {
     width: 30%;
   }
 }
+
+
+// @media screen and (max-width: 480px) {
+//   .common-container {
+//     width: 467px;
+//   }
+// }
+
+// @media screen and (max-width: 896px) {
+//   .common-container {
+//     width: 867px;
+//   }
+// }
+
+// @media screen and (max-width: 1024px) {
+//   .common-container {
+//     width: 1024px;
+//   }
+// }

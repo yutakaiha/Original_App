@@ -1,19 +1,22 @@
-
-<div class="container">
-  <% page_title = "助成金等一覧情報" %>
-  <h1><%= page_title %></h1>
-  <div class="search-container">
-    <%= search_form_for @search_subsidy do |f| %>
-      <%= f.label :title, "キーワード" %>
-      <%= f.search_field :title_cont %>
-      <%= f.submit "検索" %>
-    <% end %>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col search-container pl-5">
+      <% page_title = "助成金等一覧情報" %>
+      <h1><%= page_title %></h1>
+      <div class="search-form-container">
+        <%= search_form_for @search_subsidy do |f| %>
+          <%= f.label :title, "キーワード" %>
+          <%= f.search_field :title_cont %>
+          <%= f.submit "検索" %>
+        <% end %>
+      </div>
+    </div>
   </div>
-  <div class="row my-4">
-    <div class="subsidies-list col-md-7 px-3">
+  <div class="row my-4 pl-4">
+    <div class="subsidies-list col-md-5 col-lg-6 px-3">
       <%= render 'shared/list' %>
     </div>
-    <div class="side_bar col-md-5 px-3">
+    <div class="side_bar col-md-4 col-lg-5 px-3">
       <%= render 'shared/side_bar' %>
     </div>
   </div>
