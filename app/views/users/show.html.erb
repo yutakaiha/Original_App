@@ -1,9 +1,6 @@
-<div class="page-title">
-  <h3>プロフィール</h3>
-</div>
-<div class="container">
+<div class="container profile-content">
   <div class="row ml-3 mt-5">
-    <div class="col-md-4 border border-aqua pl-4 pt-3 mb-3">
+    <div class="col-lg-4 border border-aqua pl-4 pt-3 mb-3">
       <div id="profile-image">
         <% if @user.image.attached?  %>
           <div class="image">
@@ -15,14 +12,12 @@
             <p>No＿Image</p> 
           </div>
         <% end %>
-        
       </div>
       <div class="grade mr-2 mb-3 border border-aqua mt-3">
         <%= render 'grade' %>
       </div>
-
     </div>
-    <div class="col-md-7 ml-4">
+    <div class="col-lg-7 ml-4">
       <%= render 'profile' %>
         <div class="row chart-container border border-aqua mb-3">
           <%= render 'chart' %>

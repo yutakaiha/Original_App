@@ -1,6 +1,6 @@
 <div class="container common-container">
   <div class="row">
-    <div class="col-md-10 common-form account-height">
+    <div class="col col-md-10 common-form account-height">
 
       <h2><%= t('.title', resource: resource.model_name.human) %></h2>
 
@@ -22,11 +22,13 @@
           <%= f.date_select :birthday, start_year: 1940, end_year: Time.current.year, use_month_numbers: true, class: "form-control" %>
         </div>
 
-        <div class="field border border-blue">
-          <div class="radio-box w-75">
-            <%= f.label :sex %><br />
-            <%= f.radio_button :sex, "男" %><%= f.label :sex_1 %>
-            <%= f.radio_button :sex, "女" %><%= f.label :sex_2 %>
+        <div class="field border border-blue ">
+          <p class="mx-auto "><%= f.label :sex %><br /></p>
+          <div class="radio-contet">
+            <div id="radio">
+              <p class="mx-auto"><%= f.radio_button :sex, "男" %><%= f.label :sex_1 %></p>
+              <p class="mx-auto"><%= f.radio_button :sex, "女" %><%= f.label :sex_2 %></p>
+            </div>
           </div>
         </div>
 
