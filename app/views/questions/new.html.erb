@@ -1,9 +1,7 @@
 <div class="container">
-  <div class="row mt-5 question-new-content">
-    <div class="col-md-8new-page-title ml-3">
-        <h3>質問・相談をしてみよう！</h3>
-      </div>
-    <div class="col-sm-6 col-md-8 col-lg-10">
+  <div class="row question-new-content">
+    <div class="col-lg-10 ml-4">
+      <h3 class="text-center">質問・相談をしてみよう！</h3>
       <%= form_with model: @question, local: true do |f| %>
         <div class="error-message-area">
           <%= render 'layouts/error_form', model: @question %>
