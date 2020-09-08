@@ -1,9 +1,7 @@
-<div class="container">
-  <div class="row mt-5 answer-new-content">
-    <div class="col-md-8 new-page-title ml-3">
-        <h3>回答を投稿して情報共有しよう！</h3>
-      </div>
-    <div class="col-sm-6 col-md-8 col-lg-10">
+<div class="container answer-new-content">
+  <div class="row mt-5 ">
+    <div class="col-lg-10 ml-4">
+      <h3 class="text-center">回答を投稿して情報共有しよう！</h3>
       <%= form_with model: @answer, url: question_answers_path, local: true do |f| %>
         <%= render 'layouts/error_form', model: @answer %>
         <div class="content-form my-3">
