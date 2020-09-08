@@ -328,6 +328,10 @@ section {
   @include card-style();
 }
 
+.question-container {
+  margin-top: 110px;
+}
+
 .question-title {
   background-color: #eeffff;
 }
