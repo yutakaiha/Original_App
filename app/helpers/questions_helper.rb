@@ -1,13 +1,13 @@
 module QuestionsHelper
   def ranking_by_category(category)
-    category.questions.where.not(impressions_count: 0, impressions_count: nil).order(impressions_count: :desc).limit(5)
+    category.questions.where.not(impressions_count: nil).order(impressions_count: :desc).limit(5)
   end
 
   def ranking_by_all
-    Question.where.not(impressions_count: 0, impressions_count: nil).order(impressions_count: :desc).limit(5)
+    Question.where.not(impressions_count: nil).order(impressions_count: :desc).limit(5)
   end
 
-  def same_category_questions(question) 
+  def same_category_questions(question)
     Category.find(question.category_id).questions.order(created_at: :desc).page(params[:page]).per(5)
   end
 
@@ -17,7 +17,7 @@ module QuestionsHelper
   end
 
   def except_best_answer(answers, question)
-    answers.where.not("id = ?", question.best_answer_id)
+    answers.where.not('id = ?', question.best_answer_id)
   end
 
   # いいね機能
@@ -40,7 +40,6 @@ module QuestionsHelper
   end
 
   def comment_date(comment)
-    comment.created_at.strftime("%Y/%m/%d %H:%M:%S")
+    comment.created_at.strftime('%Y/%m/%d %H:%M:%S')
   end
-
 end
