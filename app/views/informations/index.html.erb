@@ -2,7 +2,10 @@
   <div class="row image-area">
     <div id="home" class="col">
       <div class="home-content">
-        <h1 class="page-title">Help Your Life </h1>
+        <h5 class="page-title"> 
+          ○○市助成金<br>
+          チェッカー 
+        </h5>
         <p>あなたが本当に必要としている助成金等の情報をご提供。</p>
         <% unless user_signed_in? %>
           <%= link_to '新規登録はこちら', new_user_registration_path , class: "btn btn-info sign-up" %>
@@ -82,11 +85,13 @@
       </div>
     </div>
   </div>
+
+  <div class="footer d-flex align-items-center justify-content-center">
+    ©️ 2020 Yutaka Iha
+  </div>
 </div>
 
     
     
     
-    <div class="footer">
-      
-    </div>
+    
