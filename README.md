@@ -13,17 +13,19 @@
 # feature(特徴)
 ***
 - 助成金（補助金）、手当のみに特化したアプリ。具体的にはピンポイントで自分が受給できる助成金をspeedyに検索し、当該助成金に関する情報の確認を可能にする。
-- 概算機能付き！！自身の情報を数ヶ所入力するだけでおおよその助成金額が算出される。
 - ユーザ間でお得な情報をシェアできるQ＆A機能付き。いいね、ベストアンサー機能を実装
-- 新着情報のプッシュ通知機能を実装
-- google,twitter認証機能を実装
 ※助成金等の内容は地方自治体によって異なるため、特定の市に限定した仕様となっています。
 ***
 # Requirement(Gem)
 ***
 - kaminari 
 - deivise
-- active-admin
+- activeadmin
+- ransack
+- rspec-rails
+- factory_bot_rails
+- mini_magick
+- chartkick     etc
 
 #### installation(インストール方法)
 1. Gemfileに必要なライブラリを記述→　`gem "kaminari"`
@@ -40,7 +42,7 @@
 # 製作者
 ***
 - 伊波　泰
-- twitter アカウント　　〜〜〜〜〜〜〜
+- twitter アカウント　: https://twitter.com/Yuta_Oki4Life
 ***
 # License(ライセンス)
 ***
