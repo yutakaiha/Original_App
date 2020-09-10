@@ -159,16 +159,29 @@ section {
   }
 }
 
-.blank {
-  width: 100%;
-  height: 40px;
-  margin: 40px 0;
+//topページのアクセスとSNSの部分
+.sub-content {
+  margin-top: 80px;
 }
 
+.sns-box {
+  background-color: #faf7f0;
+  padding: 4%;
+
+  h3 span {
+    border-bottom: 3px solid rgb(115, 193, 224);
+  }
+
+  h4 {
+    border-bottom: 3px solid rgb(115, 193, 224);
+  }
+}
+
+//TOPのフッター部分
 .footer {
   width: 100%;
-  height: 200px;
-  background-color: lightgrey;
+  height: 70px;
+  background-color: #f8f9fa;
 }
 
 .new-header {

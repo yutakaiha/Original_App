@@ -2,7 +2,10 @@
   <div class="row image-area">
     <div id="home" class="col">
       <div class="home-content">
-        <h1 class="page-title">Help Your Life </h1>
+        <h5 class="page-title"> 
+          ○○市助成金<br>
+          チェッカー 
+        </h5>
         <p>あなたが本当に必要としている助成金等の情報をご提供。</p>
         <% unless user_signed_in? %>
           <%= link_to '新規登録はこちら', new_user_registration_path , class: "btn btn-info sign-up" %>
@@ -32,11 +35,63 @@
     <div class="pagination">
       <p><%= paginate @informations, params: {anchor: "information"} %></p>
     </div>
-  </section>
-  <div class="blank">
-    
+</div>
+<div class="contain sub-content">
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="access-title"><h3 class="text-center"><span class="border-bottom border-aqua">アクセス</span></h3></div>
+    </div>
   </div>
-  <div class="footer">
-    
+  <div class="row access px-5">
+    <div class="col-lg-5">
+      <div class="access-info">
+        <h3 class="border-bottom border-aqua">○○○市役所 本庁舎</h3>
+        <br>
+        <p> 
+          住所： 沖縄県○○○市○○○ ××丁目××番××号<br>
+          <br>
+          電話： 111-9999-1111<br>
+          <br>
+          開庁時間：8:30 〜 17:15<br>
+          <br>
+          閉庁日： 土日祝祭日
+        </p>
+      </div>
+    </div>  
+    <div class="col-lg-7">
+      <div class="access-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3574.3747153783993!2d127.85525185059132!3d26.379079033278714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e50f0409769803%3A0x6bf93acb32ffcb63!2z44GG44KL44G-5biC5b255omA!5e0!3m2!1sja!2sjp!4v1599698571564!5m2!1sja!2sjp" width="700" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      </div>
+    </div>
+  </div>
+  <div class="sns-box mt-5">
+    <div class="row mb-4">
+      <div class="col-12">
+        <h3 class="text-center"><span>SNS</span></h3>
+      </div>
+    </div>
+    <div class="row sns"> 
+      <div class="col-lg-4 twitter">
+        <h4 class="text-center mb-5">Twitter</h4>
+        <a class="twitter-timeline" data-height="315" href="https://twitter.com/Uruma_kouhou?ref_src=twsrc%5Etfw">Tweets by Uruma_kouhou</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+      <div class="col-lg-4 facebook">
+        <h4 class="text-center mb-5">Facebook</h4>
+        <div class="fb-page" data-href="https://ja-jp.facebook.com/pages/category/City-Hall/%E3%81%86%E3%82%8B%E3%81%BE%E5%B8%82-290829237754534/" data-tabs="timeline" data-width="" data-height="315" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div>
+      </div>
+      <div class="col-lg-4 youtube mb-3">
+      <h4 class="text-center mb-5">Youtube</h4>
+      <iframe width="360" height="315" src="https://www.youtube.com/embed/UkI3inHVYNw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer d-flex align-items-center justify-content-center">
+    ©️ 2020 Yutaka Iha
   </div>
 </div>
+
+    
+    
+    
+    
