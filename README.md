@@ -14,7 +14,6 @@ URL : https://young-everglades-92957.herokuapp.com/
 前職の市役所勤務を在籍時に「助成金・補助金があることすら知らない人も多く、損をしている方々が多々いるのが現状」ということを感じていました。。また僕の友人から、もっと手軽に助成金、補助金、手当だけにフォーカスしたアプリがあれば便利との声があったため、作成する運びとなりました。
 ***
 # 開発環境
-***
 - Mac OS Catalina ver 10.15.5
 - Ruby  ver 2.6.3
 - Rails ver 6.0.3.2
@@ -22,6 +21,7 @@ URL : https://young-everglades-92957.herokuapp.com/
 - postgresql
 - heroku でデプロイ
 - 画像の保存先 Amazon S3
+***
 # Requirement(Gem)
 ***
 - kaminari 
