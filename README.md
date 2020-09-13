@@ -23,7 +23,6 @@ URL : https://young-everglades-92957.herokuapp.com/
 - 画像の保存先 Amazon S3
 ***
 # Requirement(Gem)
-***
 - kaminari 
 - deivise
 - activeadmin
