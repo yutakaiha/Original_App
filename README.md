@@ -7,7 +7,7 @@ URL : https://young-everglades-92957.herokuapp.com/
 - ユーザ間で手続きのことなどに関して気軽に相談しあえるできるQ＆A機能付き。いいね、ベストアンサー機能を実装
 ※助成金等の内容は地方自治体によって異なるため、特定の市に限定した仕様となっています。
 
-#### アプリのキャプチャ
+### アプリのキャプチャ
 
 ***
 # アプリを作成しようと思ったきっかけ
@@ -22,7 +22,6 @@ URL : https://young-everglades-92957.herokuapp.com/
 - postgresql
 - heroku でデプロイ
 - 画像の保存先 Amazon S3
-
 # Requirement(Gem)
 ***
 - kaminari 
@@ -33,27 +32,23 @@ URL : https://young-everglades-92957.herokuapp.com/
 - factory_bot_rails
 - mini_magick
 - chartkick     etc
-
 ***
 # 利用方法
-***
 ~~~
 % git clone https://github.com/hoge/~
 % cd examples
 % rails server
 ~~~
-# 製作者
 ***
+# 製作者
 - 伊波　泰
 - twitter アカウント　: https://twitter.com/Yuta_Oki4Life
 ***
 # License(ライセンス)
-***
 ご自由にご利用ください。ただし、本サンプルアプリを利用してのトラブル等は一切責任を負いません！！  
 ※詳しくは上記利用方法をご参照ください。
 ***
 # Note(注意事項)
-***
 - あくまで本アプリはサンプルであり、正確に作動しないことも十分に考えられます。
 - 架空の助成金制度等のサンプルデータを使用していますので、実際の情報と異なることがあります。
 
