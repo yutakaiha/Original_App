@@ -30,7 +30,7 @@ class QuestionsController < ApplicationController
     if Question.where(id: params[:id]).any?
       @question = Question.find(params[:id])
       impressionist(@question, nil, unique: [:session_hash])
-      @answers = @question.answers.order(created_at: :desc).page(params[:page]).per(3)
+      @answers = @question.answers.order(created_at: :desc).page(params[:page]).per(Settings.service.answer_pagination)
       @best_answer = @answers.best_answer(@question) if @question.best_answer_id
     else
       flash[:error] = 'データは存在しませんでした。'
