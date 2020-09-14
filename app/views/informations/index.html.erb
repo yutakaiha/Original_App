@@ -15,26 +15,32 @@
   </div>
 </div>
 
-<div class="top-main">
-  <section class="desc">
-    <h2 class="desc-title">サービス内容</h2>
-    <p>残念ながら大多数の方々が助成金や補助金、各種手当に関する情報に疎いのが現状です。</p>
-    <p>実際は受給できた助成金等を知らず知らずの内に見逃していることも多々あります。</p>
-    <p>そのような機会損失を少しでも減らすために、多くの役に立つ情報をご提供します。</p>
-  </section>
-  <section class="info">
-    <h2 id="information" class="info-title">NEWS（新着情報）</h2>
-    <table class="info-content">
-      <% @informations.each do |information| %>
-        <tr class="info-items">
-          <td class="item1"><%= information.created_at.strftime("%Y/%m/%d") %></td>
-          <td class="item2"><%= link_to information.title, information %></td>
-        </tr>
-      <% end %>
-    </table>
-    <div class="pagination">
-      <p><%= paginate @informations, params: {anchor: "information"} %></p>
+<div class=" container top-main">
+  <div class="row">
+    <div class="col-12">
+      <section class="desc">
+        <h2 class="desc-title">サービス内容</h2>
+        <p>残念ながら大多数の方々が助成金や補助金、各種手当に関する情報に疎いのが現状です。</p>
+        <p>実際は受給できた助成金等を知らず知らずの内に見逃していることも多々あります。</p>
+        <p>そのような機会損失を少しでも減らすために、多くの役に立つ情報をご提供します。</p>
+      </section>
+      <section class="info">
+        <h2 id="information" class="info-title mb-0">NEWS（助成金等新着情報）</h2>
+        <p>★新たに下記の助成金制度が実施されたました。申込期限や要件等を今すぐチェック！！</p>
+        <table class="info-content">
+          <% @informations.each do |information| %>
+            <tr class="info-items">
+              <td class="item1"><%= information.created_at.strftime("%Y/%m/%d") %></td>
+              <td class="item2"><%= link_to information.title.truncate(34), information %></td>
+            </tr>
+          <% end %>
+        </table>
+        <div class="pagination">
+          <p><%= paginate @informations, params: {anchor: "information"} %></p>
+        </div>
+      </section>
     </div>
+  </div>
 </div>
 
 <%= render "menu_content" %>
