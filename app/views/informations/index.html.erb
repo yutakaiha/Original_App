@@ -31,7 +31,7 @@
           <% @informations.each do |information| %>
             <tr class="info-items">
               <td class="item1"><%= information.created_at.strftime("%Y/%m/%d") %></td>
-              <td class="item2"><%= link_to information.title.truncate(34), information %></td>
+              <td class="item2"><%= link_to information.title.truncate(Settings.service.info_truncate_number), information %></td>
             </tr>
           <% end %>
         </table>

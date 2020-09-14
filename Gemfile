@@ -45,6 +45,9 @@ gem 'chartkick'
 gem 'image_processing'
 gem 'mini_magick'
 
+# 定数管理のため（マジックナンバー対策）
+gem 'config'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

@@ -1,0 +1,7 @@
+service:
+  info_pagination: 5
+  info_truncate_number: 34
+  category_pagination: 5
+  event_pagination: 8
+  answer_pagination: 3
+  subsidy_pagination: 8

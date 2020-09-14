@@ -32,7 +32,7 @@
           <%= i %>
         </td>
         <td>
-          <%= link_to_unless_current view.title, view%>
+          <%= link_to_unless_current view.title.truncate(24), view%>
         </td>
         <td>
           <span><i class="far fa-eye"></i></span> <%= view.impressions_count %>
