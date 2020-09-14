@@ -3,6 +3,9 @@
 <div class="container event-container">
   <div class="row">
     <div class="col-lg-12 event-show">
+      <div class="back_link text-right">
+        <%= link_to '助成金一覧へ', subsidies_path, class: "btn btn-primary" %>
+      </div>
       <h1><%= @event.title %></h1>
     </div>
   </div>
