@@ -16,26 +16,31 @@ class QuestionsController < ApplicationController
   def new
     @question = Question.new
   end
-  
-  def create 
+
+  def create
     @question = current_user.questions.build(question_params)
     if @question.save
-      redirect_to :questions, notice: "質問を投稿しました！"
+      redirect_to :questions, notice: '質問を投稿しました！'
     else
-      render "new"
+      render 'new'
     end
   end
 
   def show
-    @question = Question.find(params[:id])
-    impressionist(@question, nil, :unique => [:session_hash])
-    @answers = @question.answers.order(created_at: :desc).page(params[:page]).per(3)
-    @best_answer = @answers.best_answer(@question) if @question.best_answer_id
+    if Question.where(id: params[:id]).any?
+      @question = Question.find(params[:id])
+      impressionist(@question, nil, unique: [:session_hash])
+      @answers = @question.answers.order(created_at: :desc).page(params[:page]).per(3)
+      @best_answer = @answers.best_answer(@question) if @question.best_answer_id
+    else
+      flash[:error] = 'データは存在しませんでした。'
+      redirect_to questions_path
+    end
   end
 
   def destroy
     @question.destroy
-    redirect_to questions_path, notice: "投稿した質問を削除しました！"
+    redirect_to questions_path, notice: '投稿した質問を削除しました！'
   end
 
   private
