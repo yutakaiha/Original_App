@@ -5,6 +5,11 @@ class SubsidiesController < ApplicationController
   end
 
   def show
-    @subsidy = Subsidy.find(params[:id])
+    if Subsidy.where(id: params[:id]).any?
+      @subsidy = Subsidy.find(params[:id])
+    else
+      flash[:error] = 'データが存在しません。'
+      redirect_to subsidies_path
+    end
   end
 end
