@@ -36,10 +36,33 @@
       <p><%= paginate @informations, params: {anchor: "information"} %></p>
     </div>
 </div>
-<div class="contain sub-content">
+<div class="container menu-area mx-auto mt-4">
+  <div class="menu-title">
+    <h3 class="text-center"><span>メニュー一覧</span></h3>
+  </div>
+  <div class="row">
+    <div class="col-md-6 text-center mt-5">
+      <%= link_to '助成金等検索', :subsidies, class: "btn btn-info w-50"  %>
+    </div>
+    <div class="col-md-6 text-center mt-5">
+      <%= link_to '助成金等検索', :subsidies, class: "btn btn-info w-50"  %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 text-center mt-5">
+      <%= link_to 'カテゴリ別検索', :categories, class: "btn btn-info w-50"  %>
+    </div>
+    <div class="col-md-6 text-center mt-5">
+      <%= link_to_unless user_signed_in?, '気軽に相談コーナー', :questions, class: "btn btn-info w-50"  %>
+      <p class="mt-3">※ご利用するにはユーザ登録又はログインする必要があります。</p>
+    </div>
+  </div>
+</div>
+
+<div class="container sub-content">
   <div class="row mb-4">
     <div class="col-12">
-      <div class="access-title"><h3 class="text-center"><span class="border-bottom border-aqua">アクセス</span></h3></div>
+      <div class="access-title"><h3 class="text-center"><span>アクセス</span></h3></div>
     </div>
   </div>
   <div class="row access px-5">

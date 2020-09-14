@@ -127,7 +127,7 @@ section {
   }
 
   &.info {
-    background-color: #eeffff;
+    background-color: rgba(171, 220, 226, 0.1);
     height: 350px;
     margin: 50px 0;
     text-align: center;
@@ -171,18 +171,32 @@ section {
   }
 }
 
+//メニュー一覧の部分
+.menu-area {
+  h3 span {
+    border-bottom: 3px solid rgb(115, 193, 224);
+  }
+
+  p {
+    font-size: 14px;
+    color: #dfa5ab;
+    background-color: #ffffe0;
+  }
+}
+
+// アクセスの部分
+
 //topページのアクセスとSNSの部分
 .sub-content {
   margin-top: 80px;
+  h3 span {
+    border-bottom: 3px solid rgb(115, 193, 224);
+  }
 }
 
 .sns-box {
   background-color: #faf7f0;
   padding: 4%;
-
-  h3 span {
-    border-bottom: 3px solid rgb(115, 193, 224);
-  }
 
   h4 {
     border-bottom: 3px solid rgb(115, 193, 224);
