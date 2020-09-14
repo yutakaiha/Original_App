@@ -39,7 +39,8 @@ EOS
   Information.create!(
     title: titles[i % 8],
     content: content,
-    impressions_count: rand(100)
+    impressions_count: rand(100),
+    created_at: 150.days.ago.advance(days: rand(50)),
   )
 end
 
