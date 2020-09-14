@@ -7,18 +7,23 @@ class UsersController < ApplicationController
     @total_questions = @questions.present? ? @questions.count : 0
     @total_answers = @answers.present? ? @answers.count : 0
     # ここから修正
-    @total_best_answers = Question.where("best_user_id = ?", @user.id).count 
+    @total_best_answers = Question.where('best_user_id = ?', @user.id).count
     @chart_data = User.transform_chart_data(@total_best_answers, @total_answers)
   end
 
   private
 
   def correct_user
-    @user = User.find(params[:id])
-    if @user == current_user
-      @user
+    if User.where(id: params[:id]).any?
+      @user = User.find(params[:id])
+      if @user == current_user
+        @user
+      else
+        flash[:error] = 'アクセスすることはできません。'
+        redirect_to root_path
+      end
     else
-      flash[:error] = "アクセスすることはできません。"
+      flash[:error] = 'データが存在しません'
       redirect_to root_path
     end
   end

@@ -4,7 +4,12 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @category = Category.find(params[:id])
-    @subsidies = @category.subsidies.order(start_date: :desc).page(params[:page]).per(5)
+    if Category.where(id: params[:id]).any?
+      @category = Category.find(params[:id])
+      @subsidies = @category.subsidies.order(start_date: :desc).page(params[:page]).per(5)
+    else
+      flash[:error] = 'データが存在しません'
+      redirect_to categories_path
+    end
   end
 end
