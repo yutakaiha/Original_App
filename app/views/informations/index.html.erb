@@ -8,7 +8,7 @@
         </h5>
         <p>あなたが本当に必要としている助成金等の情報をご提供。</p>
         <% unless user_signed_in? %>
-          <%= link_to '新規登録はこちら', new_user_registration_path , class: "btn btn-info sign-up" %>
+          <%= link_to '新規登録はこちら', new_user_registration_path , class: "btn btn-info sign-up w-75" %>
         <% end %>
       </div>
     </div>
@@ -59,8 +59,8 @@
       </div>
     </div>  
     <div class="col-lg-7">
-      <div class="access-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3574.3747153783993!2d127.85525185059132!3d26.379079033278714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e50f0409769803%3A0x6bf93acb32ffcb63!2z44GG44KL44G-5biC5b255omA!5e0!3m2!1sja!2sjp!4v1599698571564!5m2!1sja!2sjp" width="700" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      <div class="access-map-content">
+        <iframe class="access-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3574.3747153783993!2d127.85525185059132!3d26.379079033278714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34e50f0409769803%3A0x6bf93acb32ffcb63!2z44GG44KL44G-5biC5b255omA!5e0!3m2!1sja!2sjp!4v1599698571564!5m2!1sja!2sjp" width="580" height="400" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
       </div>
     </div>
   </div>
@@ -79,9 +79,11 @@
         <h4 class="text-center mb-5">Facebook</h4>
         <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fja-jp.facebook.com%2Fpages%2Fcategory%2FCity-Hall%2F%25E3%2581%2586%25E3%2582%258B%25E3%2581%25BE%25E5%25B8%2582-290829237754534%2F&tabs=timeline&width=0&height=315&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=false&appId" width="0" height="315" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
       </div>
-      <div class="col-lg-4 youtube mb-3">
-      <h4 class="text-center mb-5">Youtube</h4>
-      <iframe width="360" height="315" src="https://www.youtube.com/embed/UkI3inHVYNw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="col-lg-4 youtube-content mb-3">
+        <h4 class="text-center mb-5">Youtube</h4>
+        <div class="youtube-movie">
+          <iframe class="youtube " width="360" height="315" src="https://www.youtube.com/embed/UkI3inHVYNw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
       </div>
     </div>
   </div>

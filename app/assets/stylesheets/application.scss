@@ -17,8 +17,19 @@ body {
     "ヒラギノ角ゴ Pro W3", sans-serif;
 }
 
+#header-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  position: relative;
+
+  & nav {
+    position: fixed;
+    z-index: 1;
+  }
+}
+
 .base-container {
-  // max-width: 1500px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
@@ -40,18 +51,18 @@ body {
 
 //TOP
 
-.header-container {
-  width: 100%;
-  display: flex;
-  align-items: center;
+// .header-container {
+//   max-width: 1280px;
+//   display: flex;
+//   align-items: center;
 
-  & nav {
-    padding-top: 53px;
-    width: 100%;
-    position: fixed;
-    z-index: 2;
-  }
-}
+//   & nav {
+//     padding-top: 53px;
+//     width: 100%;
+//     position: fixed;
+//     z-index: 2;
+//   }
+// }
 
 // ヘッダー、ログイン中のユーザー表示
 .session_user {
@@ -94,10 +105,11 @@ body {
     font-family: "Philosopher", serif;
     text-transform: uppercase;
     font-weight: normal;
+  }
 
-    & p {
-      color: gray;
-    }
+  & p {
+    color: white;
+    background-color: rgba(133, 217, 228, 0.5);
   }
 
   & .btn {
@@ -486,20 +498,58 @@ section {
   }
 }
 
-// @media screen and (max-width: 480px) {
-//   .common-container {
-//     width: 467px;
-//   }
-// }
+//スマホ対応
+@media screen and (max-width: 576px) {
+  .home-content {
+    .page-title {
+      font-size: 1.5rem;
+    }
+  }
+}
 
-// @media screen and (max-width: 896px) {
-//   .common-container {
-//     width: 867px;
-//   }
-// }
+@media screen and (max-width: 960px) {
+  .home-content {
+    .page-title {
+      font-size: 3rem;
+    }
+  }
+}
 
-// @media screen and (max-width: 1024px) {
-//   .common-container {
-//     width: 1024px;
-//   }
-// }
+@media screen and (max-width: 776px) {
+  .access-map {
+    width: 420px;
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .youtube-movie {
+    position: relative;
+    padding-top: 75%;
+    & .youtube {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .youtube {
+    width: 300px;
+  }
+}
+
+@media screen and (min-width: 1100px) {
+  .youtube {
+    width: 330px;
+  }
+}
+
+@media screen and (min-width: 1210px) {
+  .youtube {
+    width: 360px;
+  }
+}
