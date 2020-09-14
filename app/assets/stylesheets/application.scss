@@ -92,8 +92,7 @@ body {
   }
 }
 
-#home {
-}
+#home {}
 
 .home-content {
   text-align: center;
@@ -131,7 +130,6 @@ section {
 
   &.info {
     background-color: rgba(171, 220, 226, 0.1);
-    height: 350px;
     margin: 50px 0;
     text-align: center;
 
@@ -192,6 +190,7 @@ section {
 //topページのアクセスとSNSの部分
 .sub-content {
   margin-top: 80px;
+
   h3 span {
     border-bottom: 3px solid rgb(115, 193, 224);
   }
@@ -263,6 +262,7 @@ section {
 //categories.show.html.erb
 .category-show-content {
   margin-top: 110px;
+
   h1 {
     border-bottom: 3px solid #4eaee6;
   }
@@ -470,6 +470,7 @@ section {
 .answer-new-content {
   margin-top: 120px;
 }
+
 //コメント新規投稿ページ
 .question-new-content {
   margin-top: 120px;
@@ -559,6 +560,7 @@ section {
   .youtube-movie {
     position: relative;
     padding-top: 75%;
+
     & .youtube {
       position: absolute;
       top: 0;
@@ -570,6 +572,7 @@ section {
 
   .image {
     height: 200px;
+
     & .bg-image {
       position: relative;
       padding-top: 45%;
@@ -592,6 +595,7 @@ section {
 
   .image {
     height: 215px;
+
     & .bg-image {
       position: relative;
       padding-top: 75%;
