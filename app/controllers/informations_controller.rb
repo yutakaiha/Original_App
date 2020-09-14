@@ -1,12 +1,15 @@
 class InformationsController < ApplicationController
-  
-  def index  
+  def index
     @informations = Information.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   def show
-    @information = Information.find(params[:id])
-    impressionist(@information, nil, :unique => [:session_hash])
+    if Information.where(id: params[:id]).any?
+      @information = Information.find(params[:id])
+      impressionist(@information, nil, unique: [:session_hash])
+    else
+      flash[:error] = 'データが存在しませんでした。'
+      redirect_to informations_path
+    end
   end
-
 end
