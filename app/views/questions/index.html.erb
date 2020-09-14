@@ -9,8 +9,11 @@
     </div>
     <div class="col-md-12">
       <h1>Q&Aコーナー</h1>
-      <p class="border-bottom border-aqua">■気軽に助成金等に関する手続きなどについて質問してみよう。</p>
-      <p class="text-right"><%= link_to '質問・相談を投稿する', new_question_path, class: "btn btn-info"%></p>
+      <p class="border-bottom border-aqua"> ■気軽に助成金等に関する手続きなどについて質問してみよう。</p>
+      <p class="text-right mb-5">
+        <span class="mr-3"><%= link_to '助成金一覧へ戻る', subsidies_path, class: "btn btn-info w-25"  %></span>
+        <%= link_to '質問・相談を投稿する', new_question_path, class: "btn btn-info"%>
+      </p>
       <h3 class="text-center">カテゴリで検索</h3>
     </div>
   </div>
@@ -21,7 +24,7 @@
   </div>
   <div class="row qanda-main">
     <div class="col-md-7">
-      <table class="table table-hover">
+      <table class="table table-hover table-sm">
         <thead id="questions" class ="question-title">
           <tr>
             <% if @category.present? %>

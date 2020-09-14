@@ -47,7 +47,12 @@
       <%= link_to 'カテゴリ別検索', :categories, class: "btn btn-info w-50"  %>
     </div>
     <div class="col-md-6 text-center mt-5">
-      <%= link_to_unless user_signed_in?, '気軽に相談コーナー', :questions, class: "btn btn-info w-50"  %>
+      <% if user_signed_in? %>
+        <%= link_to '気軽に相談コーナー', :questions, class: "btn btn-info w-50" %>
+      <% else %>
+        <%= link_to '気軽に相談コーナー', :questions, class: "btn btn-info w-50 disabled"  %>
+      <% end %>
+  
       <p class="mt-3">※ご利用するにはユーザ登録又はログインする必要があります。</p>
     </div>
   </div>
