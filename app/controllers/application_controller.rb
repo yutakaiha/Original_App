@@ -6,4 +6,11 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update, keys: [:nickname, :image, :birthday, :sex])
   end
 
+  def check_guest
+    email = resource&.email || params[:user][:email].downcase
+    if email == "guest@example.com"
+      redirect_to root_path, alert: "ゲストユーザの変更・削除はできません！"
+    end
+  end
+
 end

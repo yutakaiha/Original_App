@@ -9,6 +9,7 @@
         <p>あなたが本当に必要としている助成金等の情報をご提供。</p>
         <% unless user_signed_in? %>
           <%= link_to '新規登録はこちら', new_user_registration_path , class: "btn btn-info sign-up w-75" %>
+          <%= link_to 'ゲストユーザーとしてログインする',  users_guest_sign_in_path, method: :post, class: "btn btn-success w-75" %>
         <% end %>
       </div>
     </div>
