@@ -16,7 +16,13 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable
-
+  
+  def self.guest
+    find_or_create_by!(nickname: "ゲストユーザ", email: "guest@example.com") do |user|
+      user.password = SecureRandom.urlsafe_base64
+    end
+  end
+  
   def resize_image
     image.variant(resize_to_limit: [300, 300])
   end
