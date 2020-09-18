@@ -92,7 +92,8 @@ body {
   }
 }
 
-#home {}
+#home {
+}
 
 .home-content {
   text-align: center;
@@ -575,6 +576,17 @@ section {
     }
   }
 
+  .facebook-image-min-width-992 {
+    display: none;
+  }
+
+  .facebook-image-max-width-991 {
+    margin-bottom: 20px;
+    display: block;
+    display: flex;
+    justify-content: center;
+  }
+
   .image {
     height: 200px;
 
@@ -617,7 +629,8 @@ section {
 }
 
 @media screen and (min-width: 1100px) {
-  .youtube {
+  .youtube,
+  .facebook {
     width: 310px;
   }
 }
@@ -625,5 +638,18 @@ section {
 @media screen and (min-width: 1210px) {
   .youtube {
     width: 360px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .facebook-image-max-width-991 {
+    display: none;
+  }
+
+  .facebook-image-min-width-992 {
+    display: block;
+    & .facebook {
+      width: 270px;
+    }
   }
 }
