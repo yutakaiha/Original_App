@@ -120,6 +120,18 @@ body {
   }
 }
 
+.top-main {
+  .desc {
+    p {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+.info-container {
+  background-color: rgba(171, 220, 226, 0.1);
+}
+
 section {
   width: 100%;
   padding-top: 30px;
@@ -130,8 +142,7 @@ section {
   }
 
   &.info {
-    background-color: rgba(171, 220, 226, 0.1);
-    margin: 50px 0;
+    margin: 40px 0;
     text-align: center;
 
     & .info-title {
