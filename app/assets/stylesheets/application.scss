@@ -120,6 +120,18 @@ body {
   }
 }
 
+.top-main {
+  .desc {
+    p {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+.info-container {
+  background-color: rgba(171, 220, 226, 0.1);
+}
+
 section {
   width: 100%;
   padding-top: 30px;
@@ -130,8 +142,7 @@ section {
   }
 
   &.info {
-    background-color: rgba(171, 220, 226, 0.1);
-    margin: 50px 0;
+    margin: 40px 0;
     text-align: center;
 
     & .info-title {
@@ -241,6 +252,11 @@ section {
   font-size: 1.3rem;
 }
 
+//助成金詳細ページ
+.subsidy-show {
+  margin-top: 115px;
+}
+
 //categories/index.html.erb
 .categories-wrapper {
   margin-top: 120px;
@@ -251,18 +267,6 @@ section {
 
 .event-container {
   margin-top: 120px;
-
-  // & .image {
-  //   & .bg-image {
-  //     height: 80%;
-  //     margin: 0 auto;
-
-  //     & .events-image {
-  //       width: 80%;
-  //       height: 60%;
-  //     }
-  //   }
-  // }
 }
 
 //categories.show.html.erb
@@ -651,5 +655,21 @@ section {
     & .facebook {
       width: 270px;
     }
+  }
+}
+
+@media screen and (max-width: 1135px) {
+  .session_user {
+    position: absolute;
+    top: 85px;
+    left: 85%;
+
+    & p {
+      font-size: small;
+    }
+  }
+
+  .flash-error {
+    margin-top: 24px;
   }
 }

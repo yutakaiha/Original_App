@@ -17,7 +17,7 @@
       <th scope="row">誕生日</th>
       <td>
         <% if @user.birthday%>
-          <%= @user.birthday&.strftime("%Y年%M月%d日") %>
+          <%= @user.birthday&.strftime("%Y年%m月%d日") %>
         <% else %>
           <%= "未登録" %>
         <% end %>
