@@ -1,28 +1,26 @@
 Rails.application.routes.draw do
   get 'users/show'
-  get '/users', to: redirect("/users/sign_up")
-  root to: "informations#index"
+  get '/users', to: redirect('/users/sign_up')
+  root to: 'informations#index'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, controllers: {
-    registrations: "users/registrations",
-    passwords: "users/passwords"
+    registrations: 'users/registrations',
+    passwords: 'users/passwords'
   }
   devise_scope :user do
-    post "users/guest_sign_in", to: "users/sessions#new_guest"
+    post 'users/guest_sign_in', to: 'users/sessions#new_guest'
   end
-  resources :users, only: :show
-  resources :informations, only: [:index, :show]
+  resources :users, only: %i[show destroy]
+  resources :informations, only: %i[index show]
   resources :subsidies
-  resources :categories, only: [:index, :show]
+  resources :categories, only: %i[index show]
   resources :events, only: :show
   resources :questions do
-    resources :answers, only: [:new, :create, :destroy] do
-      resource :best_answer, only: [:show, :create, :destroy]
-      resource :favorite, only: [:create, :destroy]
-      resources :comments, only: [:new, :create, :destroy]
+    resources :answers, only: %i[new create destroy] do
+      resource :best_answer, only: %i[show create destroy]
+      resource :favorite, only: %i[create destroy]
+      resources :comments, only: %i[new create destroy]
     end
   end
-
-
 end

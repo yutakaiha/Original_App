@@ -2,8 +2,8 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_sign_up_params, only: [:create]
-  before_action :configure_account_update_params, only: [:update]
-  before_action :check_guest, only: [:update, :destroy]
+  # before_action :configure_account_update_params, only: [:update]
+  before_action :check_guest, only: %i[update destroy]
 
   # GET /resource/sign_up
   # def new
@@ -24,9 +24,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update
     super
     resource = current_user
-    if account_update_params[:image].present?
-      resource.image.attach(account_update_params[:image])
-    end
+    resource.image.attach(account_update_params[:image]) if account_update_params[:image].present?
   end
 
   # DELETE /resource

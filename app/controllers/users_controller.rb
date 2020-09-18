@@ -11,7 +11,19 @@ class UsersController < ApplicationController
     @chart_data = User.transform_chart_data(@total_best_answers, @total_answers)
   end
 
+  def destroy
+    if user_params
+      current_user.image.purge
+      flash[:notice] = '画像を削除しました'
+      redirect_back(fallback_location: root_path)
+    end
+  end
+
   private
+
+  def user_params
+    params.require(:user).permit(:remove_image)
+  end
 
   def correct_user
     if User.where(id: params[:id]).any?
