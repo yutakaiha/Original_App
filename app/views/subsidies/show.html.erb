@@ -1,11 +1,14 @@
-<div class="container">
-  <h1><%= @subsidy.title %></h1>
+<div class="container subsidy-show">
+  <div class="row subsidy-header justify-content-between">
+    <h2><%= @subsidy.title %></h2>
+    <p><%= link_to '助成金一覧ページへ戻る', subsidies_path, class: "btn btn-primary" %></p>
+  </div>
   <div class="row my-4">
     <div class="content col-md-7 px-3">
       <%= simple_format @subsidy.content %>
     </div>
     <div class="side_bar col-md-5 px-3">
-
+      <%= render 'shared/side_bar' %>
     </div>
   </div>
 </div>
