@@ -92,8 +92,7 @@ body {
   }
 }
 
-#home {
-}
+#home {}
 
 .home-content {
   text-align: center;
@@ -633,6 +632,7 @@ section {
 }
 
 @media screen and (min-width: 1100px) {
+
   .youtube,
   .facebook {
     width: 310px;
@@ -652,6 +652,7 @@ section {
 
   .facebook-image-min-width-992 {
     display: block;
+
     & .facebook {
       width: 270px;
     }
@@ -670,6 +671,6 @@ section {
   }
 
   .flash-error {
-    margin-top: 24px;
+    margin-top: 37px;
   }
 }
