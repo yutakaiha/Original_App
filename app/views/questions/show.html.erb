@@ -4,7 +4,10 @@
       <h2 class><%= @question.title %></h2>
     </div>
     <div class="col-md-5 mb-1">
-      <p><%= link_to '相談一覧へ戻る', questions_path, class: "btn btn-outline-primary" %></p>
+      <p>
+        <%= link_to '相談一覧へ戻る', questions_path, class: "btn btn-outline-primary" %>
+        <%= link_to 'マイ質問ページへ', answered_q_users_path, class: "btn btn-outline-primary"  %>
+      </p>
     </div>
   </div>
   

@@ -20,8 +20,8 @@ class UsersController < ApplicationController
   end
 
   def answered_q
-    @questions = current_user.questions
-    @answered_q = current_user.answered_questions
+    @questions = current_user.questions.page(params[:page]).per(5)
+    @answered_q = current_user.answered_questions.page(params[:page]).per(5)
   end
 
   private
