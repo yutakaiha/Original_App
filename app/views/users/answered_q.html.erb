@@ -5,15 +5,18 @@
         <div class="list-title">
           <h3>My Answered Questions</h3>
         </div>
+        
         <% @answered_q.each do |q| %>
-          <a href="#" id="list-hover" class="list-group-item list-group-item-action flex-column align-items-start">
-            <div class="d-flex w-100 justify-content-between">
-              <h5 class="mb-1"><%= q.title %></h5>
-              <small><%= q.created_at.strftime("%Y/%m/%d") %></small>
+          <%= link_to q do %>
+            <div id="list-hover" class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1"><span><%= q.title %></span></h5>
+                <small><%= q.created_at.strftime("%Y/%m/%d") %></small>
+              </div>
+              <p class="mb-1"><%= q.content.truncate(Settings.service.answered_q_truncate) %></p>
+              <small>該当の質問詳細画面へ</small>
             </div>
-            <p class="mb-1"><%= q.content.truncate(Settings.service.answered_q_truncate) %></p>
-            <small>該当の質問詳細画面へ</small>
-          </a>
+          <% end %>
         <% end %>
         <%= javascript_pack_tag "users/index" %>
         
@@ -24,30 +27,18 @@
         <div class="list-title">
           <h3>My Questions</h3>
         </div>
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start active">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">List group item heading</h5>
-            <small>3 days ago</small>
-          </div>
-          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-          <small>Donec id elit non mi porta.</small>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">List group item heading</h5>
-            <small class="text-muted">3 days ago</small>
-          </div>
-          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-          <small class="text-muted">Donec id elit non mi porta.</small>
-        </a>
-        <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
-          <div class="d-flex w-100 justify-content-between">
-            <h5 class="mb-1">List group item heading</h5>
-            <small class="text-muted">3 days ago</small>
-          </div>
-          <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
-          <small class="text-muted">Donec id elit non mi porta.</small>
-        </a>
+        <% @questions.each do |question| %>
+          <%= link_to question do %>
+            <div id="list-hover" class="list-group-item list-group-item-action flex-column align-items-start">
+              <div class="d-flex w-100 justify-content-between">
+                <h5 class="mb-1"><span><%= question.title %></span></h5>
+                <small><%= question.created_at.strftime("%Y/%m/%d") %></small>
+              </div>
+              <p class="mb-1"><%= question.content.truncate(Settings.service.answered_q_truncate) %></p>
+              <small>該当の質問詳細画面へ</small>
+            </div>
+          <% end %>
+        <% end %>
       </div>
     </div>
   </div>

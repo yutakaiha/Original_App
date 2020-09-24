@@ -23,6 +23,12 @@
       <div class="grade mr-2 mb-3 border border-aqua mt-3">
         <%= render 'grade' %>
       </div>
+      <div class="link-space my-4">
+        <%= link_to "マイ質問一覧へ", answered_q_users_path, class: "btn btn-info w-100"  %>
+      </div>
+      <div class="link-space mb-3">
+        <%= link_to "質問・相談コーナへ", questions_path, class: "btn btn-info w-100" %>
+      </div>
     </div>
     <div class="col-lg-7 ml-4">
       <%= render 'profile' %>
