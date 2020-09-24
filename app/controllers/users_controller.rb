@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :correct_user
-  before_action :set_questions_and_answers
+  before_action :correct_user, only: %i[show destroy]
+  before_action :set_questions_and_answers, only: %i[show destroy]
 
   def show
     @total_questions = @questions.present? ? @questions.count : 0
@@ -17,6 +17,11 @@ class UsersController < ApplicationController
       flash[:notice] = '画像を削除しました'
       redirect_back(fallback_location: root_path)
     end
+  end
+
+  def answered_q
+    @questions = current_user.questions.page(params[:page]).per(5)
+    @answered_q = current_user.answered_questions.page(params[:page]).per(5)
   end
 
   private

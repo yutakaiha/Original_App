@@ -92,8 +92,7 @@ body {
   }
 }
 
-#home {
-}
+#home {}
 
 .home-content {
   text-align: center;
@@ -506,6 +505,23 @@ section {
   padding: 0 15px;
 }
 
+.my-q {
+  margin-top: 150px;
+  background-color: rgba(200, 237, 241, 0.2);
+  padding: 10px;
+}
+
+#list-hover {
+  &>div {
+    & h5 {
+      & span {
+        border-bottom: 3px solid rgb(115, 193, 224);
+      }
+    }
+  }
+}
+
+
 //レスポンシブ メディアクエリ
 
 @media screen and (min-width: 480px) {
@@ -633,6 +649,7 @@ section {
 }
 
 @media screen and (min-width: 1100px) {
+
   .youtube,
   .facebook {
     width: 310px;
@@ -652,6 +669,7 @@ section {
 
   .facebook-image-min-width-992 {
     display: block;
+
     & .facebook {
       width: 270px;
     }
@@ -670,6 +688,6 @@ section {
   }
 
   .flash-error {
-    margin-top: 24px;
+    margin-top: 37px;
   }
 }

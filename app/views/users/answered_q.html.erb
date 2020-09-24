@@ -1,0 +1,53 @@
+<div class="container my-q">
+  <div class="row">
+    <div class="col-md-12 col-lg-6">
+      <div class="list-group">
+        <div class="list-title mb-3">
+          <h3>My Answered Questions</h3>
+        </div>
+        <div class="list-area">
+          <% @answered_q.each do |q| %>
+            <%= link_to q do %>
+              <div id="list-hover" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1"><span><%= q.title %></span></h5>
+                  <small><%= q.created_at.strftime("%Y/%m/%d") %></small>
+                </div>
+                <p class="mb-1"><%= q.content.truncate(Settings.service.answered_q_truncate) %></p>
+                <small>該当の質問詳細画面へ</small>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="pagination mt-4">
+        <%= paginate @answered_q %>
+      </div>
+    </div>
+    <div class="col-md-12 col-lg-6">
+      <div class="list-group">
+        <div class="list-title mb-3">
+          <h3>My Questions</h3>
+        </div>
+        <div class="list-area">
+          <% @questions.each do |question| %>
+            <%= link_to question do %>
+              <div id="list-hover" class="list-group-item list-group-item-action flex-column align-items-start">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1"><span><%= question.title %></span></h5>
+                  <small><%= question.created_at.strftime("%Y/%m/%d") %></small>
+                </div>
+                <p class="mb-1"><%= question.content.truncate(Settings.service.answered_q_truncate) %></p>
+                <small>該当の質問詳細画面へ</small>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+      <div class="pagination mt-4">
+        <%= paginate @questions %>
+      </div>
+    </div>
+  </div>
+</div>
+<%= javascript_pack_tag "users/index" %>
