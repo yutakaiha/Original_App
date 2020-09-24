@@ -5,3 +5,4 @@ service:
   event_pagination: 8
   answer_pagination: 3
   subsidy_pagination: 8
+  answered_q_truncate: 25
